@@ -39,9 +39,10 @@
             // pcbLoginFondo
             // 
             pcbLoginFondo.Image = Properties.Resources.loginfondo1;
-            pcbLoginFondo.Location = new Point(14, 57);
+            pcbLoginFondo.Location = new Point(12, 43);
+            pcbLoginFondo.Margin = new Padding(3, 2, 3, 2);
             pcbLoginFondo.Name = "pcbLoginFondo";
-            pcbLoginFondo.Size = new Size(266, 278);
+            pcbLoginFondo.Size = new Size(233, 208);
             pcbLoginFondo.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbLoginFondo.TabIndex = 0;
             pcbLoginFondo.TabStop = false;
@@ -49,52 +50,59 @@
             // txtUsuario
             // 
             txtUsuario.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            txtUsuario.Location = new Point(401, 121);
+            txtUsuario.Location = new Point(351, 91);
+            txtUsuario.Margin = new Padding(3, 2, 3, 2);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.PlaceholderText = "Nombre del Usuario";
-            txtUsuario.Size = new Size(273, 38);
+            txtUsuario.Size = new Size(239, 32);
             txtUsuario.TabIndex = 1;
             // 
             // txtPassword
             // 
             txtPassword.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            txtPassword.Location = new Point(401, 226);
+            txtPassword.Location = new Point(351, 170);
+            txtPassword.Margin = new Padding(3, 2, 3, 2);
             txtPassword.Name = "txtPassword";
             txtPassword.PlaceholderText = "Contraseña del usuario";
-            txtPassword.Size = new Size(273, 38);
+            txtPassword.Size = new Size(239, 32);
             txtPassword.TabIndex = 2;
             txtPassword.UseSystemPasswordChar = true;
             // 
             // btnAcceder
             // 
             btnAcceder.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            btnAcceder.Location = new Point(366, 312);
+            btnAcceder.Location = new Point(320, 234);
+            btnAcceder.Margin = new Padding(3, 2, 3, 2);
             btnAcceder.Name = "btnAcceder";
-            btnAcceder.Size = new Size(140, 37);
+            btnAcceder.Size = new Size(122, 40);
             btnAcceder.TabIndex = 3;
             btnAcceder.Text = "Acceder";
             btnAcceder.UseVisualStyleBackColor = true;
+            btnAcceder.Click += btnAcceder_Click;
             // 
             // btnSalir
             // 
             btnSalir.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            btnSalir.Location = new Point(547, 314);
+            btnSalir.Location = new Point(479, 236);
+            btnSalir.Margin = new Padding(3, 2, 3, 2);
             btnSalir.Name = "btnSalir";
-            btnSalir.Size = new Size(156, 35);
+            btnSalir.Size = new Size(136, 38);
             btnSalir.TabIndex = 4;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = true;
+            btnSalir.Click += btnSalir_Click;
             // 
             // frmLogin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(btnSalir);
             Controls.Add(btnAcceder);
             Controls.Add(txtPassword);
             Controls.Add(txtUsuario);
             Controls.Add(pcbLoginFondo);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "frmLogin";
             Text = "Control de acceso";
             ((System.ComponentModel.ISupportInitialize)pcbLoginFondo).EndInit();
