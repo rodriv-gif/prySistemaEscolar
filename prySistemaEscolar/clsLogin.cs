@@ -23,7 +23,7 @@ namespace prySistemaEscolar
                 using (var conexion = conexionBD.AbrirConexion())
                 {
 
-                    string sql = "SELECT perfil FROM tblUsuarios" +
+                    string sql = "SELECT perfil FROM tblUsuarios " +
                                  "WHERE nombreUsuario = @usuario AND password = @password;";
 
                     using (var consulta = new MySqlCommand(sql, conexion))

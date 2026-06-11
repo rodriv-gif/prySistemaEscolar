@@ -12,8 +12,8 @@ namespace prySistemaEscolar
             try
             {
                 clsLogin login = new clsLogin();
-                login.usuario = txtUsuario.Text;
-                login password = txtPassword.Text;
+                login.Usuario = txtUsuario.Text;
+                login.Password = txtPassword.Text;
 
                 bool resp = login.ValidarAcceso();
                 if (resp == true)
