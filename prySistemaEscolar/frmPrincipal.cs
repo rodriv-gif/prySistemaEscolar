@@ -29,6 +29,7 @@ namespace prySistemaEscolar
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
+            //cambiando el parent de los picture
             pcbAlumnos.Parent = pcbMenu;
             pcbCarreras.Parent = pcbMenu;
             pcbDocentes.Parent = pcbMenu;
@@ -40,6 +41,12 @@ namespace prySistemaEscolar
             pcbDocentes.BackColor = Color.Transparent;
             pcbUsuarios.BackColor = Color.Transparent;
             pcbSalir.BackColor = Color.Transparent;
+
+            //verificando permisos
+            pcbCarreras.Enabled = clsLogin.EsAdministrador;
+            pcbDocentes.Enabled = clsLogin.EsAdministrador;
+            
+
         }
     }
 }
