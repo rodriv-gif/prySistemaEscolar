@@ -42,10 +42,6 @@ namespace prySistemaEscolar
             pcbUsuarios.BackColor = Color.Transparent;
             pcbSalir.BackColor = Color.Transparent;
 
-            //verificando permisos
-            pcbCarreras.Enabled = clsLogin.EsAdministrador;
-            pcbDocentes.Enabled = clsLogin.EsAdministrador;
-
 
         }
     }
