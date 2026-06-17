@@ -50,7 +50,7 @@ namespace prySistemaEscolar
                 {
 
                     string sql = "SELECT vchperfil FROM tblUsuarios " +
-                                 "WHERE vchnombreUsuario = @usuario AND vchpassword = @password;";
+                                 "WHERE vchnombreUsuario = @usuario AND vchpassword = MD5(@password);";
 
                     using (var consulta = new MySqlCommand(sql, conexion))
                     {
