@@ -10,29 +10,14 @@ namespace prySistemaEscolar
 {
     public partial class frmCarreras : Form
     {
+        clscarreras carreras;
         public frmCarreras()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlAgrupaControles_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
-        {
-
+            carreras = new clscarreras();
+            dgvCarreras.DataSource = null;
+            dgvCarreras.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dgvCarreras.DataSource = carreras.CargarDataGrid();
         }
     }
 }

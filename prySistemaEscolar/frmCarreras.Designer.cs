@@ -62,7 +62,7 @@
             IblTitulo.Size = new Size(266, 81);
             IblTitulo.TabIndex = 1;
             IblTitulo.Text = "Carreras";
-            IblTitulo.Click += label1_Click;
+       
             // 
             // pnlAgrupaControles
             // 
@@ -75,7 +75,7 @@
             pnlAgrupaControles.Name = "pnlAgrupaControles";
             pnlAgrupaControles.Size = new Size(780, 267);
             pnlAgrupaControles.TabIndex = 2;
-            pnlAgrupaControles.Paint += pnlAgrupaControles_Paint;
+         
             // 
             // dgvCarreras
             // 
@@ -94,7 +94,7 @@
             txtBuscar.PlaceholderText = "Buscar Carrera";
             txtBuscar.Size = new Size(356, 43);
             txtBuscar.TabIndex = 4;
-            txtBuscar.TextChanged += txtBuscar_TextChanged;
+            
             // 
             // btnEliminar
             // 
@@ -115,7 +115,7 @@
             btnGuardar.Size = new Size(145, 85);
             btnGuardar.TabIndex = 3;
             btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Click += button2_Click;
+
             // 
             // btnNuevo
             // 
