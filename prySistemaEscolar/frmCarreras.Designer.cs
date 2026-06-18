@@ -31,13 +31,13 @@
             pcbLogo = new PictureBox();
             IblTitulo = new Label();
             pnlAgrupaControles = new Panel();
-            dgvCarreras = new DataGridView();
-            txtBuscar = new TextBox();
             btnEliminar = new Button();
             btnGuardar = new Button();
             btnNuevo = new Button();
             txtDescripcion = new TextBox();
             txtNombre = new TextBox();
+            dgvCarreras = new DataGridView();
+            txtBuscar = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pcbLogo).BeginInit();
             pnlAgrupaControles.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvCarreras).BeginInit();
@@ -46,9 +46,9 @@
             // pcbLogo
             // 
             pcbLogo.Image = Properties.Resources._5257117;
-            pcbLogo.Location = new Point(584, 55);
+            pcbLogo.Location = new Point(584, 59);
             pcbLogo.Name = "pcbLogo";
-            pcbLogo.Size = new Size(129, 91);
+            pcbLogo.Size = new Size(114, 87);
             pcbLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbLogo.TabIndex = 0;
             pcbLogo.TabStop = false;
@@ -57,12 +57,11 @@
             // 
             IblTitulo.AutoSize = true;
             IblTitulo.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            IblTitulo.Location = new Point(312, 55);
+            IblTitulo.Location = new Point(312, 65);
             IblTitulo.Name = "IblTitulo";
             IblTitulo.Size = new Size(266, 81);
             IblTitulo.TabIndex = 1;
             IblTitulo.Text = "Carreras";
-       
             // 
             // pnlAgrupaControles
             // 
@@ -75,26 +74,6 @@
             pnlAgrupaControles.Name = "pnlAgrupaControles";
             pnlAgrupaControles.Size = new Size(780, 267);
             pnlAgrupaControles.TabIndex = 2;
-         
-            // 
-            // dgvCarreras
-            // 
-            dgvCarreras.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCarreras.Location = new Point(163, 474);
-            dgvCarreras.Name = "dgvCarreras";
-            dgvCarreras.RowHeadersWidth = 51;
-            dgvCarreras.Size = new Size(780, 101);
-            dgvCarreras.TabIndex = 3;
-            // 
-            // txtBuscar
-            // 
-            txtBuscar.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtBuscar.Location = new Point(587, 425);
-            txtBuscar.Name = "txtBuscar";
-            txtBuscar.PlaceholderText = "Buscar Carrera";
-            txtBuscar.Size = new Size(356, 43);
-            txtBuscar.TabIndex = 4;
-            
             // 
             // btnEliminar
             // 
@@ -115,7 +94,6 @@
             btnGuardar.Size = new Size(145, 85);
             btnGuardar.TabIndex = 3;
             btnGuardar.UseVisualStyleBackColor = true;
-
             // 
             // btnNuevo
             // 
@@ -144,6 +122,24 @@
             txtNombre.PlaceholderText = "Escribir el nombre de la carrera";
             txtNombre.Size = new Size(568, 43);
             txtNombre.TabIndex = 0;
+            // 
+            // dgvCarreras
+            // 
+            dgvCarreras.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCarreras.Location = new Point(163, 474);
+            dgvCarreras.Name = "dgvCarreras";
+            dgvCarreras.RowHeadersWidth = 51;
+            dgvCarreras.Size = new Size(780, 106);
+            dgvCarreras.TabIndex = 3;
+            // 
+            // txtBuscar
+            // 
+            txtBuscar.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtBuscar.Location = new Point(587, 425);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.PlaceholderText = "Buscar Carrera";
+            txtBuscar.Size = new Size(356, 43);
+            txtBuscar.TabIndex = 4;
             // 
             // frmCarreras
             // 

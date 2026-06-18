@@ -64,7 +64,7 @@ namespace prySistemaEscolar
 
         private void pcbSalir_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
     }
 }
