@@ -30,24 +30,27 @@ namespace prySistemaEscolar
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-        
+
             //cambiando el parent de los picture
             pcbAlumnos.Parent = pcbMenu;
             pcbCarreras.Parent = pcbMenu;
             pcbDocentes.Parent = pcbMenu;
             pcbUsuarios.Parent = pcbMenu;
             pcbSalir.Parent = pcbMenu;
+            pcbTutores.Parent = pcbMenu;
 
             pcbAlumnos.BackColor = Color.Transparent;
             pcbCarreras.BackColor = Color.Transparent;
             pcbDocentes.BackColor = Color.Transparent;
             pcbUsuarios.BackColor = Color.Transparent;
             pcbSalir.BackColor = Color.Transparent;
+            pcbTutores.BackColor = Color.Transparent;
 
             //verificando permisos
             pcbCarreras.Enabled = clsLogin.EsAdministrador;
             pcbDocentes.Enabled = clsLogin.EsAdministrador;
             pcbUsuarios.Enabled = clsLogin.EsAdministrador;
+            pcbTutores.Enabled = clsLogin.EsAdministrador;
 
             pcbAlumnos.Enabled = clsLogin.EsAdministrador || clsLogin.EsDocente;
 
@@ -56,7 +59,12 @@ namespace prySistemaEscolar
         private void pcbCarreras_Click(object sender, EventArgs e)
         {
             principal = new clsPrincipal();
-            principal.agregarAlContenedor(new frmCarreras(),pnlContenedor);
+            principal.agregarAlContenedor(new frmCarreras(), pnlContenedor);
+        }
+
+        private void pcbSalir_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
