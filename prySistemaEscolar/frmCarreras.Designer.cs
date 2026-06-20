@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             pcbLogo = new PictureBox();
             IblTitulo = new Label();
             pnlAgrupaControles = new Panel();
@@ -72,14 +74,14 @@
             pnlAgrupaControles.Controls.Add(txtNombre);
             pnlAgrupaControles.Location = new Point(163, 152);
             pnlAgrupaControles.Name = "pnlAgrupaControles";
-            pnlAgrupaControles.Size = new Size(780, 267);
+            pnlAgrupaControles.Size = new Size(780, 234);
             pnlAgrupaControles.TabIndex = 2;
             // 
             // btnEliminar
             // 
             btnEliminar.BackgroundImage = Properties.Resources.Eliminar;
             btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnEliminar.Location = new Point(555, 174);
+            btnEliminar.Location = new Point(546, 137);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(145, 85);
             btnEliminar.TabIndex = 4;
@@ -89,7 +91,7 @@
             // 
             btnGuardar.BackgroundImage = Properties.Resources.Guardar;
             btnGuardar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnGuardar.Location = new Point(335, 174);
+            btnGuardar.Location = new Point(324, 137);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(145, 85);
             btnGuardar.TabIndex = 3;
@@ -99,7 +101,7 @@
             // 
             btnNuevo.BackgroundImage = Properties.Resources.Nuevo;
             btnNuevo.BackgroundImageLayout = ImageLayout.Stretch;
-            btnNuevo.Location = new Point(132, 174);
+            btnNuevo.Location = new Point(132, 137);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new Size(145, 85);
             btnNuevo.TabIndex = 2;
@@ -108,7 +110,7 @@
             // txtDescripcion
             // 
             txtDescripcion.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtDescripcion.Location = new Point(132, 111);
+            txtDescripcion.Location = new Point(132, 77);
             txtDescripcion.Name = "txtDescripcion";
             txtDescripcion.PlaceholderText = "Escribir una descripción de la carrera ";
             txtDescripcion.Size = new Size(568, 43);
@@ -117,7 +119,7 @@
             // txtNombre
             // 
             txtNombre.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtNombre.Location = new Point(132, 38);
+            txtNombre.Location = new Point(132, 12);
             txtNombre.Name = "txtNombre";
             txtNombre.PlaceholderText = "Escribir el nombre de la carrera";
             txtNombre.Size = new Size(568, 43);
@@ -125,21 +127,41 @@
             // 
             // dgvCarreras
             // 
+            dgvCarreras.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.Teal;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvCarreras.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvCarreras.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCarreras.Location = new Point(163, 474);
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Teal;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(192, 192, 255);
+            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvCarreras.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvCarreras.EnableHeadersVisualStyles = false;
+            dgvCarreras.Location = new Point(163, 441);
             dgvCarreras.Name = "dgvCarreras";
             dgvCarreras.RowHeadersWidth = 51;
-            dgvCarreras.Size = new Size(780, 106);
+            dgvCarreras.RowTemplate.Height = 35;
+            dgvCarreras.Size = new Size(780, 139);
             dgvCarreras.TabIndex = 3;
             // 
             // txtBuscar
             // 
             txtBuscar.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtBuscar.Location = new Point(587, 425);
+            txtBuscar.Location = new Point(587, 392);
             txtBuscar.Name = "txtBuscar";
             txtBuscar.PlaceholderText = "Buscar Carrera";
             txtBuscar.Size = new Size(356, 43);
             txtBuscar.TabIndex = 4;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // frmCarreras
             // 

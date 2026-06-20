@@ -19,5 +19,10 @@ namespace prySistemaEscolar
             dgvCarreras.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             dgvCarreras.DataSource = carreras.CargarDataGrid();
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
