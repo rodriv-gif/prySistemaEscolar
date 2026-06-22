@@ -107,6 +107,7 @@
             btnNuevo.Size = new Size(145, 85);
             btnNuevo.TabIndex = 2;
             btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // txtDescripcion
             // 

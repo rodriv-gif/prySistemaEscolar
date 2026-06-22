@@ -9,8 +9,12 @@ namespace prySistemaEscolar
     internal class clscarreras
     {
         private string nombreCarrera;
+        private string descripcion;
+        private int idCarrera; //este atributo es para referencia en update y delete
         //Usar un adaptador
         private MySqlDataAdapter consulta;
+        //usamos comandpara insertar o actualizar
+        private MySqlCommand comando;
         //Usamos una tabla temporal
         private DataTable tabla;
         //propiedad para el atributo nombre carrera
@@ -69,5 +73,54 @@ namespace prySistemaEscolar
         }
 
         //Metodo para actualizar
+        public string GuardarActualizar(int tipoOperacion)
+        {
+            string msj= "";
+
+            clsConexion conexionBD = new clsConexion();
+            using (var conexion = conexionBD.AbrirConexion())
+            {
+                switch (tipoOperacion)
+                {
+                    case 0://insertar new
+                        string sqlN = "INSERT INTO tblcarreras (nombreCarrera, descripcion) VALUES (@nombreCarrera,@descripcion);";
+                        using (comando = new MySqlCommand(sqlN, conexion))
+                        {
+                            comando.Parameters.AddWithValue("nombreCarrera", nombreCarrera);
+                            comando.Parameters.AddWithValue("descripcion", descripcion);
+
+                            int filasAfectadas = comando.ExecuteNonQuery();
+                            if (filasAfectadas > 0)
+                            {
+                                msj = "El registro se guardo correctamente";
+                            }
+                            else
+                            {
+                                msj = "Error, no se guardaron los datos...";
+                            }
+                        }//libera la operacion de insercion
+                            break;
+                    case 1://actualizar old
+                        string sqlA = "UPDATE tblcarreras C SET C.nombreCarrera = @nombreCarrera, C.descripcion = @descripcion WHERE C.idCarrera = idCarrera;";
+                        using (comando = new MySqlCommand(sqlA, conexion))
+                        {
+                            comando.Parameters.AddWithValue("idCarrera", idCarrera);
+                            comando.Parameters.AddWithValue("nombreCarrera", nombreCarrera);
+                            comando.Parameters.AddWithValue("descripcion", descripcion);
+
+                            int filasAfectadas = comando.ExecuteNonQuery();
+                            if (filasAfectadas > 0)
+                            {
+                                msj = "El registro se guardo correctamente";
+                            }
+                            else
+                            {
+                                msj = "Error, no se guardaron los datos...";
+                            }
+                        }//libera la operacion de insercion
+                        break;
+                }
+            }//Libera la conexion
+        }
     }
 }

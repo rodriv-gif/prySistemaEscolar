@@ -58,7 +58,13 @@ namespace prySistemaEscolar
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            int tipoOperacion = idCarreras == 0 ? 0 : 01;
+            carreras.GuardarActualizar(tipoOperacion);
+        }
 
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            idCarreras = 0;
         }
     }
 }
