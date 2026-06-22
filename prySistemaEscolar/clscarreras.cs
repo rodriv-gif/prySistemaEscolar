@@ -26,7 +26,7 @@ namespace prySistemaEscolar
                 using (var conexion = conexionBD.AbrirConexion())
                 {
                     string sql = "SELECT idCarrera AS Clave, nombreCarrera AS Carrera, descripcion AS Descripción FROM tblcarreras;";
-                    using (consulta = new MySqlDataAdapter(sql, conexion)) ;
+                    using (consulta = new MySqlDataAdapter(sql, conexion)) 
                     {
                         consulta.Fill(tabla);
                     }//Liberar la consulta
