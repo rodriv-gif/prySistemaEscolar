@@ -67,5 +67,7 @@ namespace prySistemaEscolar
             }
             return tabla;
         }
+
+        //Metodo para actualizar
     }
 }
