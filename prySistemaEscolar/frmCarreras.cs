@@ -11,6 +11,7 @@ namespace prySistemaEscolar
     public partial class frmCarreras : Form
     {
         clscarreras carreras;
+        int idCarreras;
         public frmCarreras()
         {
             InitializeComponent();
@@ -35,7 +36,7 @@ namespace prySistemaEscolar
             dgvCarreras.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             try
             {
-                carreras.NombreCarrera=txtNombreCarrera.Text;
+                carreras.NombreCarrera = txtNombreCarrera.Text;
                 dgvCarreras.DataSource = carreras.Consultar();
 
             }
@@ -43,6 +44,20 @@ namespace prySistemaEscolar
             {
                 MessageBox.Show(ex.Message);
             }
+
+        }
+
+        private void dgvCarreras_SelectionChanged(object sender, EventArgs e)
+        {
+            //Campo oculto que sirve de referencia para actualizar y eliminar
+            idCarreras = int.Parse(dgvCarreras.CurrentRow.Cells[0].Value.ToString());
+            txtNombre.Text = dgvCarreras.CurrentRow.Cells[1].Value.ToString();
+            txtDescripcion.Text = dgvCarreras.CurrentRow.Cells[2].Value.ToString();
+
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
 
         }
     }
