@@ -104,7 +104,7 @@ namespace prySistemaEscolar
                             }//libera la operacion de insercion
                             break;
                         case 1://actualizar old
-                            string sqlA = "UPDATE tblcarreras C SET C.nombreCarrera = @nombreCarrera, C.descripcion = @descripcion WHERE C.idCarrera = idCarrera;";
+                            string sqlA = "UPDATE tblcarreras  SET nombreCarrera = @nombreCarrera, descripcion = @descripcion WHERE idCarrera = @idCarrera;";
                             using (comando = new MySqlCommand(sqlA, conexion))
                             {
                                 comando.Parameters.AddWithValue("idCarrera", idCarrera);
