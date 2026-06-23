@@ -15,6 +15,11 @@ namespace prySistemaEscolar
         public frmCarreras()
         {
             InitializeComponent();
+            CargarGrid();
+            
+        }
+        public void CargarGrid()
+        {
             carreras = new clscarreras();
             dgvCarreras.DataSource = null;
             dgvCarreras.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -51,6 +56,7 @@ namespace prySistemaEscolar
         {
             //Campo oculto que sirve de referencia para actualizar y eliminar
             idCarreras = int.Parse(dgvCarreras.CurrentRow.Cells[0].Value.ToString());
+            //estas son visuales
             txtNombre.Text = dgvCarreras.CurrentRow.Cells[1].Value.ToString();
             txtDescripcion.Text = dgvCarreras.CurrentRow.Cells[2].Value.ToString();
 
@@ -58,13 +64,28 @@ namespace prySistemaEscolar
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            int tipoOperacion = idCarreras == 0 ? 0 : 01;
-            carreras.GuardarActualizar(tipoOperacion);
+            try
+            {
+                int tipoOperacion = idCarreras == 0 ? 0 : 1;
+                carreras.IdCarrera = idCarreras;
+                carreras.NombreCarrera = txtNombre.Text;
+                carreras.Descripcion = txtDescripcion.Text;
+                string msj = carreras.GuardarActualizar(tipoOperacion);
+                MessageBox.Show(msj);
+                CargarGrid();
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             idCarreras = 0;
+            txtNombre.Clear();
+            txtDescripcion.Clear();
+            txtNombre.Focus();
         }
     }
 }
