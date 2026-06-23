@@ -48,9 +48,9 @@
             // pcbLogo
             // 
             pcbLogo.Image = Properties.Resources._5257117;
-            pcbLogo.Location = new Point(584, 59);
+            pcbLogo.Location = new Point(678, 82);
             pcbLogo.Name = "pcbLogo";
-            pcbLogo.Size = new Size(114, 87);
+            pcbLogo.Size = new Size(120, 87);
             pcbLogo.SizeMode = PictureBoxSizeMode.StretchImage;
             pcbLogo.TabIndex = 0;
             pcbLogo.TabStop = false;
@@ -59,7 +59,7 @@
             // 
             IblTitulo.AutoSize = true;
             IblTitulo.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            IblTitulo.Location = new Point(312, 65);
+            IblTitulo.Location = new Point(406, 88);
             IblTitulo.Name = "IblTitulo";
             IblTitulo.Size = new Size(266, 81);
             IblTitulo.TabIndex = 1;
@@ -72,9 +72,9 @@
             pnlAgrupaControles.Controls.Add(btnNuevo);
             pnlAgrupaControles.Controls.Add(txtDescripcion);
             pnlAgrupaControles.Controls.Add(txtNombre);
-            pnlAgrupaControles.Location = new Point(163, 152);
+            pnlAgrupaControles.Location = new Point(257, 175);
             pnlAgrupaControles.Name = "pnlAgrupaControles";
-            pnlAgrupaControles.Size = new Size(779, 235);
+            pnlAgrupaControles.Size = new Size(785, 235);
             pnlAgrupaControles.TabIndex = 2;
             // 
             // btnEliminar
@@ -149,21 +149,21 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvCarreras.DefaultCellStyle = dataGridViewCellStyle2;
             dgvCarreras.EnableHeadersVisualStyles = false;
-            dgvCarreras.Location = new Point(163, 441);
+            dgvCarreras.Location = new Point(257, 464);
             dgvCarreras.Name = "dgvCarreras";
             dgvCarreras.RowHeadersWidth = 51;
             dgvCarreras.RowTemplate.Height = 35;
-            dgvCarreras.Size = new Size(779, 139);
+            dgvCarreras.Size = new Size(785, 166);
             dgvCarreras.TabIndex = 3;
             dgvCarreras.SelectionChanged += dgvCarreras_SelectionChanged;
             // 
             // txtNombreCarrera
             // 
             txtNombreCarrera.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtNombreCarrera.Location = new Point(587, 392);
+            txtNombreCarrera.Location = new Point(681, 415);
             txtNombreCarrera.Name = "txtNombreCarrera";
             txtNombreCarrera.PlaceholderText = "Buscar Carrera";
-            txtNombreCarrera.Size = new Size(356, 43);
+            txtNombreCarrera.Size = new Size(362, 43);
             txtNombreCarrera.TabIndex = 4;
             txtNombreCarrera.TextChanged += txtNombreCarrera_TextChanged;
             // 
@@ -173,7 +173,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Imagen2;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1105, 637);
+            ClientSize = new Size(1315, 709);
             Controls.Add(txtNombreCarrera);
             Controls.Add(dgvCarreras);
             Controls.Add(pnlAgrupaControles);
