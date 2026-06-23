@@ -19,6 +19,8 @@ namespace prySistemaEscolar
         private DataTable tabla;
         //propiedad para el atributo nombre carrera
         public string NombreCarrera { get => nombreCarrera; set => nombreCarrera = value; }
+        public string Descripcion { get => descripcion; set => descripcion = value; }
+        public int IdCarrera { get => idCarrera; set => idCarrera = value; }
 
         //metodo para cargar datos en el DataGrid
         public DataTable CargarDataGrid()
@@ -54,7 +56,7 @@ namespace prySistemaEscolar
                 clsConexion conexionBD = new clsConexion();
                 using (var conexion = conexionBD.AbrirConexion())
                 {
-                    string sql = "SELECT idcarrera AS Clave,nombreCarrera AS Carrera,descripcion AS Descripcion\r\nFROM tblCarreras WHERE nombreCarrera LIKE @carrera; ";
+                    string sql = "SELECT idCarrera AS Clave,nombreCarrera AS Carrera,descripcion AS Descripcion\r\nFROM tblCarreras WHERE nombreCarrera LIKE @carrera; ";
                     using (var consultar = new MySqlCommand(sql, conexion))
                     {
                         consultar.Parameters.AddWithValue("@carrera", "%" + nombreCarrera + "%");
@@ -76,51 +78,87 @@ namespace prySistemaEscolar
         public string GuardarActualizar(int tipoOperacion)
         {
             string msj= "";
-
-            clsConexion conexionBD = new clsConexion();
-            using (var conexion = conexionBD.AbrirConexion())
+            try
             {
-                switch (tipoOperacion)
+                clsConexion conexionBD = new clsConexion();
+                using (var conexion = conexionBD.AbrirConexion())
                 {
-                    case 0://insertar new
-                        string sqlN = "INSERT INTO tblcarreras (nombreCarrera, descripcion) VALUES (@nombreCarrera,@descripcion);";
-                        using (comando = new MySqlCommand(sqlN, conexion))
-                        {
-                            comando.Parameters.AddWithValue("nombreCarrera", nombreCarrera);
-                            comando.Parameters.AddWithValue("descripcion", descripcion);
+                    switch (tipoOperacion)
+                    {
+                        case 0://insertar new
+                            string sqlN = "INSERT INTO tblcarreras (nombreCarrera, descripcion) VALUES (@nombreCarrera,@descripcion);";
+                            using (comando = new MySqlCommand(sqlN, conexion))
+                            {
+                                comando.Parameters.AddWithValue("nombreCarrera", nombreCarrera);
+                                comando.Parameters.AddWithValue("descripcion", descripcion);
 
-                            int filasAfectadas = comando.ExecuteNonQuery();
-                            if (filasAfectadas > 0)
-                            {
-                                msj = "El registro se guardo correctamente";
-                            }
-                            else
-                            {
-                                msj = "Error, no se guardaron los datos...";
-                            }
-                        }//libera la operacion de insercion
+                                int filasAfectadas = comando.ExecuteNonQuery();
+                                if (filasAfectadas > 0)
+                                {
+                                    msj = "El registro se guardo correctamente";
+                                }
+                                else
+                                {
+                                    msj = "Error, no se guardaron los datos...";
+                                }
+                            }//libera la operacion de insercion
                             break;
-                    case 1://actualizar old
-                        string sqlA = "UPDATE tblcarreras C SET C.nombreCarrera = @nombreCarrera, C.descripcion = @descripcion WHERE C.idCarrera = idCarrera;";
-                        using (comando = new MySqlCommand(sqlA, conexion))
-                        {
-                            comando.Parameters.AddWithValue("idCarrera", idCarrera);
-                            comando.Parameters.AddWithValue("nombreCarrera", nombreCarrera);
-                            comando.Parameters.AddWithValue("descripcion", descripcion);
+                        case 1://actualizar old
+                            string sqlA = "UPDATE tblcarreras C SET C.nombreCarrera = @nombreCarrera, C.descripcion = @descripcion WHERE C.idCarrera = idCarrera;";
+                            using (comando = new MySqlCommand(sqlA, conexion))
+                            {
+                                comando.Parameters.AddWithValue("idCarrera", idCarrera);
+                                comando.Parameters.AddWithValue("nombreCarrera", nombreCarrera);
+                                comando.Parameters.AddWithValue("descripcion", descripcion);
 
-                            int filasAfectadas = comando.ExecuteNonQuery();
-                            if (filasAfectadas > 0)
-                            {
-                                msj = "El registro se guardo correctamente";
-                            }
-                            else
-                            {
-                                msj = "Error, no se guardaron los datos...";
-                            }
-                        }//libera la operacion de insercion
-                        break;
-                }
-            }//Libera la conexion
+                                int filasAfectadas = comando.ExecuteNonQuery();
+                                if (filasAfectadas > 0)
+                                {
+                                    msj = "El registro se guardo correctamente";
+                                }
+                                else
+                                {
+                                    msj = "Error, no se guardaron los datos...";
+                                }
+                            }//libera la operacion de actualización
+                            break;
+                    }
+                }//Libera la conexion
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("error"+ex.Message);
+            }
+            return msj;
+        }
+        public string Eliminar()
+        {
+            string msj = "";
+            try
+            {
+                clsConexion conexionBD = new clsConexion();
+                using (var conexion = conexionBD.AbrirConexion())
+                {
+                    string sql = "DELETE FROM tblcarreras C WHERE C.idCarrera= @idCarrera;";
+                    using (comando = new MySqlCommand(sql, conexion))
+                    {
+                        comando.Parameters.AddWithValue("@idCarrera", idCarrera);
+                        int filasAfectadas = comando.ExecuteNonQuery();
+                        if (filasAfectadas > 0)
+                        {
+                            msj = "Datos eliminados correctamente";
+                        }
+                        else
+                        {
+                            msj = "Los datos no se pudieron eliminar";
+                        }
+                    }//Libera la eliminacion
+                }//Libera la conexion
+            }catch(Exception ex)
+            {
+                throw new Exception("error"+ex.Message);
+            }
+            return msj;
         }
     }
 }
