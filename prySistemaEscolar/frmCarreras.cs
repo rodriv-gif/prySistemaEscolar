@@ -109,21 +109,7 @@ namespace prySistemaEscolar
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                carreras.IdCarrera = idCarreras;
-                var resp = MessageBox.Show("comfirmar que se desea eliminar el dato seleccionado", "ALERTA!!", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
-                if (resp == DialogResult.Yes)
-                {
-                    string msg = carreras.Eliminar();
-                    MessageBox.Show(msg);
-                    CargarGrid();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+           
         }
     }
 }
