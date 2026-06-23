@@ -16,7 +16,7 @@ namespace prySistemaEscolar
         {
             InitializeComponent();
             CargarGrid();
-            
+
         }
         public void CargarGrid()
         {
@@ -66,18 +66,37 @@ namespace prySistemaEscolar
         {
             try
             {
+
                 int tipoOperacion = idCarreras == 0 ? 0 : 1;
                 carreras.IdCarrera = idCarreras;
                 carreras.NombreCarrera = txtNombre.Text;
                 carreras.Descripcion = txtDescripcion.Text;
-                string msj = carreras.GuardarActualizar(tipoOperacion);
-                MessageBox.Show(msj);
+                string msj="";
+                if (tipoOperacion != 0)
+                {
+                    var resp = MessageBox.Show("comfirmar que se desea actualizar el dato seleccionado", "ALERTA!!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (resp == DialogResult.Yes)
+                    {
+
+                        msj = carreras.GuardarActualizar(tipoOperacion);
+                        MessageBox.Show(msj);
+                    }
+
+                }
+                else
+                {
+                    msj = carreras.GuardarActualizar(tipoOperacion);
+                    MessageBox.Show(msj);
+                }
+              
                 CargarGrid();
-            }catch(Exception ex)
+            
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-           
+
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -86,6 +105,25 @@ namespace prySistemaEscolar
             txtNombre.Clear();
             txtDescripcion.Clear();
             txtNombre.Focus();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                carreras.IdCarrera = idCarreras;
+                var resp = MessageBox.Show("comfirmar que se desea eliminar el dato seleccionado", "ALERTA!!", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+                if (resp == DialogResult.Yes)
+                {
+                    string msg = carreras.Eliminar();
+                    MessageBox.Show(msg);
+                    CargarGrid();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
