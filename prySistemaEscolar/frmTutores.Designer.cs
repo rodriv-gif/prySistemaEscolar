@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             pictureBox1 = new PictureBox();
             label1 = new Label();
             panel1 = new Panel();
@@ -116,59 +118,83 @@
             // 
             // txtCorreo
             // 
+            txtCorreo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtCorreo.Location = new Point(289, 174);
             txtCorreo.Name = "txtCorreo";
             txtCorreo.PlaceholderText = "Escribir correo";
-            txtCorreo.Size = new Size(500, 27);
+            txtCorreo.Size = new Size(500, 34);
             txtCorreo.TabIndex = 4;
             // 
             // txtTelefono
             // 
+            txtTelefono.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtTelefono.Location = new Point(289, 131);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.PlaceholderText = "Escribir el número de telefono";
-            txtTelefono.Size = new Size(500, 27);
+            txtTelefono.Size = new Size(500, 34);
             txtTelefono.TabIndex = 3;
             // 
             // txtDireccion
             // 
+            txtDireccion.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtDireccion.Location = new Point(289, 89);
             txtDireccion.Name = "txtDireccion";
             txtDireccion.PlaceholderText = "Escribir la direccion";
-            txtDireccion.Size = new Size(500, 27);
+            txtDireccion.Size = new Size(500, 34);
             txtDireccion.TabIndex = 2;
             // 
             // txtParentesco
             // 
+            txtParentesco.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtParentesco.Location = new Point(289, 45);
             txtParentesco.Name = "txtParentesco";
             txtParentesco.PlaceholderText = "Escribir el parentesco";
-            txtParentesco.Size = new Size(500, 27);
+            txtParentesco.Size = new Size(500, 34);
             txtParentesco.TabIndex = 1;
             // 
             // txtNombreCompleto
             // 
+            txtNombreCompleto.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtNombreCompleto.Location = new Point(289, 3);
             txtNombreCompleto.Name = "txtNombreCompleto";
             txtNombreCompleto.PlaceholderText = "Escribir el nombre del tutor";
-            txtNombreCompleto.Size = new Size(500, 27);
+            txtNombreCompleto.Size = new Size(500, 34);
             txtNombreCompleto.TabIndex = 0;
             // 
             // dgvTutor
             // 
+            dgvTutor.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.ActiveCaption;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Info;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvTutor.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvTutor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.PeachPuff;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlDarkDark;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvTutor.DefaultCellStyle = dataGridViewCellStyle2;
             dgvTutor.Location = new Point(269, 508);
             dgvTutor.Name = "dgvTutor";
             dgvTutor.RowHeadersWidth = 51;
             dgvTutor.Size = new Size(855, 140);
             dgvTutor.TabIndex = 3;
+            dgvTutor.SelectionChanged += dgvTutor_SelectionChanged;
             // 
             // txtBuscar
             // 
+            txtBuscar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtBuscar.Location = new Point(840, 470);
             txtBuscar.Name = "txtBuscar";
             txtBuscar.PlaceholderText = "Buscar";
-            txtBuscar.Size = new Size(284, 27);
+            txtBuscar.Size = new Size(284, 34);
             txtBuscar.TabIndex = 4;
             txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
