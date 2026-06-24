@@ -66,5 +66,11 @@ namespace prySistemaEscolar
         {
             Application.Exit();
         }
+
+        private void pcbTutores_Click(object sender, EventArgs e)
+        {
+            principal = new clsPrincipal();
+            principal.agregarAlContenedor(new frmTutores(), pnlContenedor);
+        }
     }
 }
