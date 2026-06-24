@@ -40,6 +40,7 @@
             txtParentesco = new TextBox();
             txtNombreCompleto = new TextBox();
             dgvTutor = new DataGridView();
+            txtBuscar = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvTutor).BeginInit();
@@ -153,11 +154,20 @@
             // dgvTutor
             // 
             dgvTutor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvTutor.Location = new Point(269, 460);
+            dgvTutor.Location = new Point(269, 508);
             dgvTutor.Name = "dgvTutor";
             dgvTutor.RowHeadersWidth = 51;
-            dgvTutor.Size = new Size(855, 188);
+            dgvTutor.Size = new Size(855, 140);
             dgvTutor.TabIndex = 3;
+            // 
+            // txtBuscar
+            // 
+            txtBuscar.Location = new Point(840, 470);
+            txtBuscar.Name = "txtBuscar";
+            txtBuscar.PlaceholderText = "Buscar";
+            txtBuscar.Size = new Size(284, 27);
+            txtBuscar.TabIndex = 4;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // frmTutores
             // 
@@ -166,6 +176,7 @@
             BackgroundImage = Properties.Resources.cuadro;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1315, 709);
+            Controls.Add(txtBuscar);
             Controls.Add(dgvTutor);
             Controls.Add(panel1);
             Controls.Add(label1);
@@ -195,5 +206,6 @@
         private Button btnNuevo;
         private TextBox txtCorreo;
         private DataGridView dgvTutor;
+        private TextBox txtBuscar;
     }
 }
