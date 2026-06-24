@@ -28,122 +28,140 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
-            label1 = new Label();
+            pcbTutor = new PictureBox();
+            Ibltitulo = new Label();
             panel1 = new Panel();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            btneliminar = new Button();
+            btnguardar = new Button();
+            btnnuevo = new Button();
             textBox5 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            textBox4 = new TextBox();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            dvgTutores = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)pcbTutor).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dvgTutores).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // pcbTutor
             // 
-            pictureBox1.Image = Properties.Resources._10491839;
-            pictureBox1.Location = new Point(712, 47);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(99, 94);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            pcbTutor.Image = Properties.Resources._10491839;
+            pcbTutor.Location = new Point(727, 58);
+            pcbTutor.Name = "pcbTutor";
+            pcbTutor.Size = new Size(93, 79);
+            pcbTutor.SizeMode = PictureBoxSizeMode.StretchImage;
+            pcbTutor.TabIndex = 0;
+            pcbTutor.TabStop = false;
             // 
-            // label1
+            // Ibltitulo
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(462, 60);
-            label1.Name = "label1";
-            label1.Size = new Size(244, 81);
-            label1.TabIndex = 1;
-            label1.Text = "Tutores";
+            Ibltitulo.AutoSize = true;
+            Ibltitulo.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Ibltitulo.Location = new Point(477, 56);
+            Ibltitulo.Name = "Ibltitulo";
+            Ibltitulo.Size = new Size(244, 81);
+            Ibltitulo.TabIndex = 1;
+            Ibltitulo.Text = "Tutores";
             // 
             // panel1
             // 
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(btneliminar);
+            panel1.Controls.Add(btnguardar);
+            panel1.Controls.Add(btnnuevo);
             panel1.Controls.Add(textBox5);
             panel1.Controls.Add(textBox4);
             panel1.Controls.Add(textBox3);
             panel1.Controls.Add(textBox2);
             panel1.Controls.Add(textBox1);
-            panel1.Location = new Point(96, 147);
+            panel1.Location = new Point(112, 139);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1130, 423);
+            panel1.Size = new Size(1091, 325);
             panel1.TabIndex = 2;
+            panel1.Paint += panel1_Paint;
             // 
-            // textBox1
+            // btneliminar
             // 
-            textBox1.Location = new Point(289, 22);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Escribir el nombre del tutor";
-            textBox1.Size = new Size(500, 27);
-            textBox1.TabIndex = 0;
+            btneliminar.BackgroundImage = Properties.Resources.Eliminar;
+            btneliminar.BackgroundImageLayout = ImageLayout.Stretch;
+            btneliminar.Location = new Point(703, 246);
+            btneliminar.Name = "btneliminar";
+            btneliminar.Size = new Size(132, 67);
+            btneliminar.TabIndex = 7;
+            btneliminar.UseVisualStyleBackColor = true;
+            btneliminar.Click += btneliminar_Click;
             // 
-            // textBox2
+            // btnguardar
             // 
-            textBox2.Location = new Point(289, 74);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Escribir el parntesco";
-            textBox2.Size = new Size(500, 27);
-            textBox2.TabIndex = 1;
+            btnguardar.BackgroundImage = Properties.Resources.Guardar;
+            btnguardar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnguardar.Location = new Point(477, 246);
+            btnguardar.Name = "btnguardar";
+            btnguardar.Size = new Size(132, 67);
+            btnguardar.TabIndex = 6;
+            btnguardar.UseVisualStyleBackColor = true;
+            btnguardar.Click += btnguardar_Click;
             // 
-            // textBox3
+            // btnnuevo
             // 
-            textBox3.Location = new Point(289, 127);
-            textBox3.Name = "textBox3";
-            textBox3.PlaceholderText = "Escribir la direccion";
-            textBox3.Size = new Size(500, 27);
-            textBox3.TabIndex = 2;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(289, 185);
-            textBox4.Name = "textBox4";
-            textBox4.PlaceholderText = "Escribir el número de telefono";
-            textBox4.Size = new Size(500, 27);
-            textBox4.TabIndex = 3;
+            btnnuevo.BackgroundImage = Properties.Resources.Nuevo3;
+            btnnuevo.BackgroundImageLayout = ImageLayout.Stretch;
+            btnnuevo.Location = new Point(242, 246);
+            btnnuevo.Name = "btnnuevo";
+            btnnuevo.Size = new Size(132, 67);
+            btnnuevo.TabIndex = 5;
+            btnnuevo.UseVisualStyleBackColor = true;
+            btnnuevo.Click += btnnuevo_Click;
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(289, 242);
+            textBox5.Location = new Point(289, 202);
             textBox5.Name = "textBox5";
             textBox5.PlaceholderText = "Escribir correo";
             textBox5.Size = new Size(500, 27);
             textBox5.TabIndex = 4;
             // 
-            // button1
+            // textBox4
             // 
-            button1.Location = new Point(221, 292);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 5;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            textBox4.Location = new Point(289, 154);
+            textBox4.Name = "textBox4";
+            textBox4.PlaceholderText = "Escribir el número de telefono";
+            textBox4.Size = new Size(500, 27);
+            textBox4.TabIndex = 3;
             // 
-            // button2
+            // textBox3
             // 
-            button2.Location = new Point(475, 304);
-            button2.Name = "button2";
-            button2.Size = new Size(209, 60);
-            button2.TabIndex = 6;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            textBox3.Location = new Point(289, 109);
+            textBox3.Name = "textBox3";
+            textBox3.PlaceholderText = "Escribir la direccion";
+            textBox3.Size = new Size(500, 27);
+            textBox3.TabIndex = 2;
             // 
-            // button3
+            // textBox2
             // 
-            button3.Location = new Point(788, 309);
-            button3.Name = "button3";
-            button3.Size = new Size(203, 68);
-            button3.TabIndex = 7;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            textBox2.Location = new Point(289, 66);
+            textBox2.Name = "textBox2";
+            textBox2.PlaceholderText = "Escribir el parntesco";
+            textBox2.Size = new Size(500, 27);
+            textBox2.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(289, 23);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Escribir el nombre del tutor";
+            textBox1.Size = new Size(500, 27);
+            textBox1.TabIndex = 0;
+            // 
+            // dvgTutores
+            // 
+            dvgTutores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dvgTutores.Location = new Point(253, 470);
+            dvgTutores.Name = "dvgTutores";
+            dvgTutores.RowHeadersWidth = 51;
+            dvgTutores.Size = new Size(853, 171);
+            dvgTutores.TabIndex = 3;
             // 
             // frmTutores
             // 
@@ -152,31 +170,34 @@
             BackgroundImage = Properties.Resources.cuadro;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1315, 709);
+            Controls.Add(dvgTutores);
             Controls.Add(panel1);
-            Controls.Add(label1);
-            Controls.Add(pictureBox1);
+            Controls.Add(Ibltitulo);
+            Controls.Add(pcbTutor);
             DoubleBuffered = true;
             Name = "frmTutores";
             Text = "frmTutores";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pcbTutor).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dvgTutores).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
-        private Label label1;
+        private PictureBox pcbTutor;
+        private Label Ibltitulo;
         private Panel panel1;
         private TextBox textBox2;
         private TextBox textBox1;
         private TextBox textBox4;
         private TextBox textBox3;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button btneliminar;
+        private Button btnguardar;
+        private Button btnnuevo;
         private TextBox textBox5;
+        private DataGridView dvgTutores;
     }
 }

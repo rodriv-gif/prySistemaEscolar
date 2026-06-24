@@ -6,5 +6,6 @@ namespace prySistemaEscolar
 {
     internal class clsTutores
     {
+
     }
 }

@@ -14,5 +14,25 @@ namespace prySistemaEscolar
         {
             InitializeComponent();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnnuevo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnguardar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btneliminar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
