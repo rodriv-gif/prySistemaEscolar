@@ -90,6 +90,7 @@
             btnEliminar.Size = new Size(135, 73);
             btnEliminar.TabIndex = 7;
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnGuardar
             // 
@@ -100,6 +101,7 @@
             btnGuardar.Size = new Size(135, 73);
             btnGuardar.TabIndex = 6;
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnNuevo
             // 
@@ -110,6 +112,7 @@
             btnNuevo.Size = new Size(135, 73);
             btnNuevo.TabIndex = 5;
             btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // txtCorreo
             // 
