@@ -71,7 +71,7 @@ namespace prySistemaEscolar
                 carreras.IdCarrera = idCarreras;
                 carreras.NombreCarrera = txtNombre.Text;
                 carreras.Descripcion = txtDescripcion.Text;
-                string msj="";
+                string msj = "";
                 if (tipoOperacion != 0)
                 {
                     var resp = MessageBox.Show("comfirmar que se desea actualizar el dato seleccionado", "ALERTA!!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -88,9 +88,9 @@ namespace prySistemaEscolar
                     msj = carreras.GuardarActualizar(tipoOperacion);
                     MessageBox.Show(msj);
                 }
-              
+
                 CargarGrid();
-            
+
             }
             catch (Exception ex)
             {
