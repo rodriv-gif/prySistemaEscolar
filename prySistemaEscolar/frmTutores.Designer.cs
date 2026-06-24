@@ -31,24 +31,26 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             panel1 = new Panel();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            btnEliminar = new Button();
+            btnGuardar = new Button();
+            btnNuevo = new Button();
+            txtCorreo = new TextBox();
+            txtTelefono = new TextBox();
+            txtDireccion = new TextBox();
+            txtParentesco = new TextBox();
+            txtNombreCompleto = new TextBox();
+            dgvTutor = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvTutor).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources._10491839;
-            pictureBox1.Location = new Point(712, 47);
+            pictureBox1.Location = new Point(711, 57);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(99, 94);
+            pictureBox1.Size = new Size(102, 91);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -57,7 +59,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(462, 60);
+            label1.Location = new Point(462, 64);
             label1.Name = "label1";
             label1.Size = new Size(244, 81);
             label1.TabIndex = 1;
@@ -65,85 +67,97 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
-            panel1.Controls.Add(textBox5);
-            panel1.Controls.Add(textBox4);
-            panel1.Controls.Add(textBox3);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(textBox1);
-            panel1.Location = new Point(96, 147);
+            panel1.Controls.Add(btnEliminar);
+            panel1.Controls.Add(btnGuardar);
+            panel1.Controls.Add(btnNuevo);
+            panel1.Controls.Add(txtCorreo);
+            panel1.Controls.Add(txtTelefono);
+            panel1.Controls.Add(txtDireccion);
+            panel1.Controls.Add(txtParentesco);
+            panel1.Controls.Add(txtNombreCompleto);
+            panel1.Location = new Point(96, 151);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1130, 423);
+            panel1.Size = new Size(1130, 304);
             panel1.TabIndex = 2;
             // 
-            // textBox1
+            // btnEliminar
             // 
-            textBox1.Location = new Point(289, 22);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Escribir el nombre del tutor";
-            textBox1.Size = new Size(500, 27);
-            textBox1.TabIndex = 0;
+            btnEliminar.BackgroundImage = Properties.Resources.Eliminar;
+            btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnEliminar.Location = new Point(716, 217);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(135, 73);
+            btnEliminar.TabIndex = 7;
+            btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // textBox2
+            // btnGuardar
             // 
-            textBox2.Location = new Point(289, 74);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Escribir el parntesco";
-            textBox2.Size = new Size(500, 27);
-            textBox2.TabIndex = 1;
+            btnGuardar.BackgroundImage = Properties.Resources.Guardar;
+            btnGuardar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnGuardar.Location = new Point(458, 217);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(135, 73);
+            btnGuardar.TabIndex = 6;
+            btnGuardar.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // btnNuevo
             // 
-            textBox3.Location = new Point(289, 127);
-            textBox3.Name = "textBox3";
-            textBox3.PlaceholderText = "Escribir la direccion";
-            textBox3.Size = new Size(500, 27);
-            textBox3.TabIndex = 2;
+            btnNuevo.BackgroundImage = Properties.Resources.Nuevo;
+            btnNuevo.BackgroundImageLayout = ImageLayout.Stretch;
+            btnNuevo.Location = new Point(225, 217);
+            btnNuevo.Name = "btnNuevo";
+            btnNuevo.Size = new Size(135, 73);
+            btnNuevo.TabIndex = 5;
+            btnNuevo.UseVisualStyleBackColor = true;
             // 
-            // textBox4
+            // txtCorreo
             // 
-            textBox4.Location = new Point(289, 185);
-            textBox4.Name = "textBox4";
-            textBox4.PlaceholderText = "Escribir el número de telefono";
-            textBox4.Size = new Size(500, 27);
-            textBox4.TabIndex = 3;
+            txtCorreo.Location = new Point(289, 174);
+            txtCorreo.Name = "txtCorreo";
+            txtCorreo.PlaceholderText = "Escribir correo";
+            txtCorreo.Size = new Size(500, 27);
+            txtCorreo.TabIndex = 4;
             // 
-            // textBox5
+            // txtTelefono
             // 
-            textBox5.Location = new Point(289, 242);
-            textBox5.Name = "textBox5";
-            textBox5.PlaceholderText = "Escribir correo";
-            textBox5.Size = new Size(500, 27);
-            textBox5.TabIndex = 4;
+            txtTelefono.Location = new Point(289, 131);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.PlaceholderText = "Escribir el número de telefono";
+            txtTelefono.Size = new Size(500, 27);
+            txtTelefono.TabIndex = 3;
             // 
-            // button1
+            // txtDireccion
             // 
-            button1.Location = new Point(221, 292);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 5;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            txtDireccion.Location = new Point(289, 89);
+            txtDireccion.Name = "txtDireccion";
+            txtDireccion.PlaceholderText = "Escribir la direccion";
+            txtDireccion.Size = new Size(500, 27);
+            txtDireccion.TabIndex = 2;
             // 
-            // button2
+            // txtParentesco
             // 
-            button2.Location = new Point(475, 304);
-            button2.Name = "button2";
-            button2.Size = new Size(209, 60);
-            button2.TabIndex = 6;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            txtParentesco.Location = new Point(289, 45);
+            txtParentesco.Name = "txtParentesco";
+            txtParentesco.PlaceholderText = "Escribir el parentesco";
+            txtParentesco.Size = new Size(500, 27);
+            txtParentesco.TabIndex = 1;
             // 
-            // button3
+            // txtNombreCompleto
             // 
-            button3.Location = new Point(788, 309);
-            button3.Name = "button3";
-            button3.Size = new Size(203, 68);
-            button3.TabIndex = 7;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            txtNombreCompleto.Location = new Point(289, 3);
+            txtNombreCompleto.Name = "txtNombreCompleto";
+            txtNombreCompleto.PlaceholderText = "Escribir el nombre del tutor";
+            txtNombreCompleto.Size = new Size(500, 27);
+            txtNombreCompleto.TabIndex = 0;
+            // 
+            // dgvTutor
+            // 
+            dgvTutor.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTutor.Location = new Point(269, 460);
+            dgvTutor.Name = "dgvTutor";
+            dgvTutor.RowHeadersWidth = 51;
+            dgvTutor.Size = new Size(855, 188);
+            dgvTutor.TabIndex = 3;
             // 
             // frmTutores
             // 
@@ -152,6 +166,7 @@
             BackgroundImage = Properties.Resources.cuadro;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1315, 709);
+            Controls.Add(dgvTutor);
             Controls.Add(panel1);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
@@ -161,6 +176,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvTutor).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -170,13 +186,14 @@
         private PictureBox pictureBox1;
         private Label label1;
         private Panel panel1;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private TextBox textBox4;
-        private TextBox textBox3;
-        private Button button3;
-        private Button button2;
-        private Button button1;
-        private TextBox textBox5;
+        private TextBox txtParentesco;
+        private TextBox txtNombreCompleto;
+        private TextBox txtTelefono;
+        private TextBox txtDireccion;
+        private Button btnEliminar;
+        private Button btnGuardar;
+        private Button btnNuevo;
+        private TextBox txtCorreo;
+        private DataGridView dgvTutor;
     }
 }
