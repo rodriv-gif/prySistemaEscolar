@@ -119,6 +119,7 @@
             // pnlContenedor
             // 
             pnlContenedor.BackColor = Color.FromArgb(255, 224, 192);
+            pnlContenedor.Cursor = Cursors.WaitCursor;
             pnlContenedor.Location = new Point(493, 192);
             pnlContenedor.Name = "pnlContenedor";
             pnlContenedor.Size = new Size(1333, 756);
