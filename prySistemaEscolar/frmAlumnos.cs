@@ -90,7 +90,7 @@ namespace prySistemaEscolar
             {
                 //esto es para poder saber si es nuevo o vamos a actualizar
                 idMatricula = int.Parse(dgvAlumnos.CurrentRow.Cells["Matricula"].Value.ToString());
-                idUsuario = int.Parse(dgvAlumnos.CurrentRow.Cells["Apaterno"].Value.ToString());
+                idUsuario = int.Parse(dgvAlumnos.CurrentRow.Cells["idUsuario"].Value.ToString());
 
                 //esto es para la tabla alumnos
                 txtMatricula.Text = idMatricula.ToString();
@@ -100,15 +100,15 @@ namespace prySistemaEscolar
                 txtDireccion.Text = dgvAlumnos.CurrentRow.Cells["direccion"].Value.ToString();
                 txtTelefono.Text = dgvAlumnos.CurrentRow.Cells["telefono"].Value.ToString();
                 txtCorreo.Text = dgvAlumnos.CurrentRow.Cells["correo"].Value.ToString();
-                txtPromedioBachiller.Text = dgvAlumnos.CurrentRow.Cells["promedioBachiller"].Value.ToString();
+                txtPromedioBachiller.Text = dgvAlumnos.CurrentRow.Cells["promedioBachillerato"].Value.ToString();
 
                 //esto es para la tabla Usuarios
                 txtUsuario.Text = dgvAlumnos.CurrentRow.Cells["Usuario"].Value.ToString();
-                txtPassword.Text = dgvAlumnos.CurrentRow.Cells["vchpassword"].Value.ToString();
-                cmbPerfil.Text = dgvAlumnos.CurrentRow.Cells["vchperfil"].Value.ToString();
+                txtPassword.Text = dgvAlumnos.CurrentRow.Cells["Password"].Value.ToString();
+                cmbPerfil.Text = dgvAlumnos.CurrentRow.Cells["Perfil"].Value.ToString();
 
                 //usar selected value para apuntar al dato precisode cada registro
-                cmbCarrera.SelectedValue = int.Parse(dgvAlumnos.CurrentRow.Cells["idCarreras"].Value.ToString());
+                cmbCarrera.SelectedValue = int.Parse(dgvAlumnos.CurrentRow.Cells["idCarrera"].Value.ToString());
                 cmbTutor.SelectedValue = int.Parse(dgvAlumnos.CurrentRow.Cells["idTutor"].Value.ToString());
             }
             catch (Exception ex)

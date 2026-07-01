@@ -137,13 +137,13 @@ namespace prySistemaEscolar
                 clsConexion conexionBD = new clsConexion();
                 using (var conexion = conexionBD.AbrirConexion())
                 {
-                    string sql = "SELECT A.matricula AS Matricula, A.nombreAlumno AS Nombre,\r\nA.apellidoP AS 'A. Paterno', A.apellidoM AS 'A. Materno',\r\nC.nombreCarrera AS Carrera,\r\nT.nombreTutor AS Tutor,\r\nU.vchnombreUsuario AS Usuario,A.direccion,\r\nA.telefono, A.correo, A.promedioBachillerato, A.idTutor, A.idCarrera, A.idUsuario\r\nFROM tblalumnos A\r\nINNER JOIN tblcarreras C ON A.idCarrera = C.idCarrera\r\nINNER JOIN tbltutores T ON A.idTutor = T.idTutor\r\nINNER JOIN tblusuarios U ON A.idUsuario = U.intidUsuario WHERE A.matricula lIKE @matricula; ";
+                    string sql = "SELECT A.matricula AS Matricula, A.nombreAlumno AS Nombre,\r\nA.apellidoP AS 'A. Paterno', A.apellidoM AS 'A. Materno',\r\nC.nombreCarrera AS Carrera,\r\nT.nombreTutor AS Tutor,\r\nU.vchnombreUsuario AS Usuario,A.direccion,\r\nA.telefono, A.correo, A.promedioBachillerato, A.idTutor, A.idCarrera, A.idUsuario\r\nFROM tblalumnos A\r\nINNER JOIN tblcarreras C ON A.idCarrera = C.idCarrera\r\nINNER JOIN tbltutores T ON A.idTutor = T.idTutor\r\nINNER JOIN tblusuarios U ON A.idUsuario = U.intidUsuario WHERE A.matricula LIKE @matricula; ";
                     using (var consultar = new MySqlCommand(sql, conexion))
                     {
                         consultar.Parameters.AddWithValue("@matricula", "%" + matricula + "%");
                         using (consulta = new MySqlDataAdapter(consultar))
                         {
-                            consulta.Fill(tabla);
+                            consulta.Fill(tabla);   
                         }//Liberara el adaptador
                     }//Liberar la consulta
                 }//Libera la conexion
