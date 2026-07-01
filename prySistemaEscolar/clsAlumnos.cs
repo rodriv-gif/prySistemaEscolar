@@ -21,9 +21,9 @@ namespace prySistemaEscolar
         private int idCarrera;//foraneo
         private int idUsuario;
 
-        //adaptador y  tabla virtuales de la clase
+      /*  //adaptador y  tabla virtuales de la clase
         private MySqlDataAdapter consulta;
-        private DataTable tabla;
+        private DataTable tabla;*/
 
         //propiedades
         public int Matricula { get => matricula; set => matricula = value; }
@@ -37,5 +37,78 @@ namespace prySistemaEscolar
         public int IdTutor { get => idTutor; set => idTutor = value; }
         public int IdCarrera { get => idCarrera; set => idCarrera = value; }
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
+
+        public DataTable CargarDataGrid()
+        {
+            tabla = new DataTable();
+            try
+            {
+                clsConexion conexionBD = new clsConexion();
+                using (var conexion = conexionBD.AbrirConexion())
+                {
+                    string sql = "SELECT A.matricula AS Matricula, A.nombreAlumno AS Nombre,\r\nA.apellidoP AS 'A. Paterno', A.apellidoM AS 'A. Materno',\r\nC.nombreCarrera AS Carrera,\r\nT.nombreTutor AS Tutor,\r\nU.vchnombreUsuario AS Usuario,A.direccion,\r\nA.telefono, A.correo, A.promedioBachillerato, A.idTutor, A.idCarrera, A.idUsuario\r\nFROM tblalumnos A\r\nINNER JOIN tblcarreras C ON A.idCarrera = C.idCarrera\r\nINNER JOIN tbltutores T ON A.idTutor = T.idTutor\r\nINNER JOIN tblusuarios U ON A.idUsuario = U.intidUsuario;";
+                    using (consulta = new MySqlDataAdapter(sql, conexion))
+                    {
+                        consulta.Fill(tabla);
+                    }//Liberar la consulta
+
+                }//liberar la conexion
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("error en la conexion " + ex.Message);
+            }
+            return tabla;
+        }
+
+        //Para el combo de carreras
+        public DataTable ObtenerCarreras()
+        {
+            tabla=new DataTable();
+            try
+            {
+                clsConexion conexionBD = new clsConexion();
+                using (var conexion=conexionBD.AbrirConexion())
+                {
+                    //Valuemember es el idcarrera y el display member el nombre de la carrera
+                    string sql = "SELECT idCarrera, nombreCarrera FROM tblcarreras;";
+                    using (consulta=new MySqlDataAdapter(sql, conexion))
+                    {
+                        consulta.Fill(tabla);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("error al obtener el catalogo de carreras " + ex.Message);
+            }
+            return tabla;
+        }
+        //Metodo para el combo tutores
+        public DataTable ObtenerTutores()
+        {
+            tabla = new DataTable();
+            try
+            {
+                clsConexion conexionBD = new clsConexion();
+                using (var conexion = conexionBD.AbrirConexion())
+                {
+                    //Valuemember es el idTutor y el display member el nombre del tutor
+                    string sql = "SELECT idTutor, nombreTutor FROM tbltutores;";
+                    using (consulta = new MySqlDataAdapter(sql, conexion))
+                    {
+                        consulta.Fill(tabla);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("error al obtener el catalogo de tutores " + ex.Message);
+            }
+            return tabla;
+        }
     }
 }
