@@ -25,9 +25,6 @@ namespace prySistemaEscolar
         private MySqlDataAdapter consulta;
         private DataTable tabla;
 
-        //Adaptador y tabla virtuales de la clase
-        private MySqlDataAdapter consultar;
-        private DataTable tabla;
         //propiedades
         public int Matricula { get => matricula; set => matricula = value; }
         public string NombreAlumno { get => nombreAlumno; set => nombreAlumno = value; }
