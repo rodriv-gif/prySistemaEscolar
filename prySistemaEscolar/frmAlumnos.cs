@@ -30,7 +30,7 @@ namespace prySistemaEscolar
                 //Asignamos la tabla virtual de la clase directamente al control visual
                 dgvAlumnos.DataSource = alumnos.CargarDataGrid();
                 dgvAlumnos.Columns["usuario"].Visible = false;
-                dgvAlumnos.Columns["Password"].Visible = false;
+                dgvAlumnos.Columns["vchpassword"].Visible = false;
                 dgvAlumnos.Columns["Perfil"].Visible = false;
                 dgvAlumnos.Columns["direccion"].Visible = false;
                 dgvAlumnos.Columns["correo"].Visible = false;
@@ -104,12 +104,14 @@ namespace prySistemaEscolar
 
                 //esto es para la tabla Usuarios
                 txtUsuario.Text = dgvAlumnos.CurrentRow.Cells["Usuario"].Value.ToString();
-                txtPassword.Text = dgvAlumnos.CurrentRow.Cells["Password"].Value.ToString();
+                txtPassword.Text = dgvAlumnos.CurrentRow.Cells["vchpassword"].Value.ToString();
                 cmbPerfil.Text = dgvAlumnos.CurrentRow.Cells["Perfil"].Value.ToString();
 
                 //usar selected value para apuntar al dato precisode cada registro
                 cmbCarrera.SelectedValue = int.Parse(dgvAlumnos.CurrentRow.Cells["idCarrera"].Value.ToString());
                 cmbTutor.SelectedValue = int.Parse(dgvAlumnos.CurrentRow.Cells["idTutor"].Value.ToString());
+
+
             }
             catch (Exception ex)
             {
