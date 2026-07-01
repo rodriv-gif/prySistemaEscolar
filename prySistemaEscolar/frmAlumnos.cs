@@ -10,6 +10,8 @@ namespace prySistemaEscolar
 {
     public partial class frmAlumnos : Form
     {
+        int idMatricula;
+        int idUsuario;
         clsAlumnos alumnos;
         public frmAlumnos()
         {
@@ -27,6 +29,16 @@ namespace prySistemaEscolar
             {
                 //Asignamos la tabla virtual de la clase directamente al control visual
                 dgvAlumnos.DataSource = alumnos.CargarDataGrid();
+                dgvAlumnos.Columns["usuario"].Visible = false;
+                dgvAlumnos.Columns["Password"].Visible = false;
+                dgvAlumnos.Columns["Perfil"].Visible = false;
+                dgvAlumnos.Columns["direccion"].Visible = false;
+                dgvAlumnos.Columns["correo"].Visible = false;
+                dgvAlumnos.Columns["telefono"].Visible = false;
+                dgvAlumnos.Columns["promedioBachillerato"].Visible = false;
+                dgvAlumnos.Columns["idTutor"].Visible = false;
+                dgvAlumnos.Columns["idCarrera"].Visible = false;
+                dgvAlumnos.Columns["idUsuario"].Visible = false;
 
             }
             catch (Exception ex)
@@ -36,7 +48,7 @@ namespace prySistemaEscolar
         }
         public void CargarCombos()
         {
-            alumnos= new clsAlumnos();
+            alumnos = new clsAlumnos();
             try
             {
                 DataTable dtCarreras = alumnos.ObtenerCarreras();
@@ -68,8 +80,13 @@ namespace prySistemaEscolar
             catch (Exception ex)
             {
 
-                MessageBox.Show("Error al rellenar los catálogos en los menús despegables: "+ex.Message);
+                MessageBox.Show("Error al rellenar los catálogos en los menús despegables: " + ex.Message);
             }
+        }
+
+        private void dgvAlumnos_SelectionChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

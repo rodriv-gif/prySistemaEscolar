@@ -46,7 +46,7 @@ namespace prySistemaEscolar
                 clsConexion conexionBD = new clsConexion();
                 using (var conexion = conexionBD.AbrirConexion())
                 {
-                    string sql = "SELECT A.matricula AS Matricula, A.nombreAlumno AS Nombre,\r\nA.apellidoP AS 'A. Paterno', A.apellidoM AS 'A. Materno',\r\nC.nombreCarrera AS Carrera,\r\nT.nombreTutor AS Tutor,\r\nU.vchnombreUsuario AS Usuario,A.direccion,\r\nA.telefono, A.correo, A.promedioBachillerato, A.idTutor, A.idCarrera, A.idUsuario\r\nFROM tblalumnos A\r\nINNER JOIN tblcarreras C ON A.idCarrera = C.idCarrera\r\nINNER JOIN tbltutores T ON A.idTutor = T.idTutor\r\nINNER JOIN tblusuarios U ON A.idUsuario = U.intidUsuario;";
+                    string sql = "SELECT A.matricula AS Matricula, A.nombreAlumno AS Nombre,\r\nA.apellidoP AS 'A. Paterno', A.apellidoM AS 'A. Materno',\r\nC.nombreCarrera AS Carrera,\r\nT.nombreTutor AS Tutor,\r\nU.vchnombreUsuario AS Usuario, U.vchpassword AS Password, U.vchperfil AS Perfil,A.direccion,\r\nA.telefono, A.correo, A.promedioBachillerato, A.idTutor, A.idCarrera, A.idUsuario\r\nFROM tblalumnos A\r\nINNER JOIN tblcarreras C ON A.idCarrera = C.idCarrera\r\nINNER JOIN tbltutores T ON A.idTutor = T.idTutor\r\nINNER JOIN tblusuarios U ON A.idUsuario = U.intidUsuario;";
                     using (consulta = new MySqlDataAdapter(sql, conexion))
                     {
                         consulta.Fill(tabla);

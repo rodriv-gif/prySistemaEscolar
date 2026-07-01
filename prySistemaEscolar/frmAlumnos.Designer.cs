@@ -64,7 +64,7 @@
             // txtBuscar
             // 
             txtBuscar.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtBuscar.Location = new Point(798, 541);
+            txtBuscar.Location = new Point(859, 541);
             txtBuscar.Name = "txtBuscar";
             txtBuscar.PlaceholderText = "Buscar";
             txtBuscar.Size = new Size(328, 34);
@@ -90,17 +90,18 @@
             dataGridViewCellStyle2.SelectionForeColor = SystemColors.ControlDarkDark;
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dgvAlumnos.DefaultCellStyle = dataGridViewCellStyle2;
-            dgvAlumnos.Location = new Point(39, 581);
+            dgvAlumnos.Location = new Point(100, 581);
             dgvAlumnos.Name = "dgvAlumnos";
             dgvAlumnos.RowHeadersWidth = 51;
             dgvAlumnos.Size = new Size(1087, 177);
             dgvAlumnos.TabIndex = 27;
+            dgvAlumnos.SelectionChanged += dgvAlumnos_SelectionChanged;
             // 
             // btnEliminar
             // 
             btnEliminar.BackgroundImage = Properties.Resources.Eliminar;
             btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnEliminar.Location = new Point(834, 466);
+            btnEliminar.Location = new Point(895, 466);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(135, 73);
             btnEliminar.TabIndex = 26;
@@ -110,7 +111,7 @@
             // 
             btnGuardar.BackgroundImage = Properties.Resources.Guardar;
             btnGuardar.BackgroundImageLayout = ImageLayout.Stretch;
-            btnGuardar.Location = new Point(603, 466);
+            btnGuardar.Location = new Point(664, 466);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(135, 73);
             btnGuardar.TabIndex = 25;
@@ -120,7 +121,7 @@
             // 
             btnNuevo.BackgroundImage = Properties.Resources.Nuevo;
             btnNuevo.BackgroundImageLayout = ImageLayout.Stretch;
-            btnNuevo.Location = new Point(361, 466);
+            btnNuevo.Location = new Point(422, 466);
             btnNuevo.Name = "btnNuevo";
             btnNuevo.Size = new Size(135, 73);
             btnNuevo.TabIndex = 24;
@@ -130,7 +131,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            label2.Location = new Point(742, 125);
+            label2.Location = new Point(803, 125);
             label2.Name = "label2";
             label2.Size = new Size(97, 31);
             label2.TabIndex = 23;
@@ -140,7 +141,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold);
-            label1.Location = new Point(85, 116);
+            label1.Location = new Point(146, 116);
             label1.Name = "label1";
             label1.Size = new Size(100, 31);
             label1.TabIndex = 20;
@@ -153,7 +154,7 @@
             panel2.Controls.Add(cmbPerfil);
             panel2.Controls.Add(txtPassword);
             panel2.Controls.Add(txtUsuario);
-            panel2.Location = new Point(685, 159);
+            panel2.Location = new Point(746, 159);
             panel2.Name = "panel2";
             panel2.Size = new Size(457, 301);
             panel2.TabIndex = 22;
@@ -200,7 +201,7 @@
             pnlAlumno.Controls.Add(txtAPaterno);
             pnlAlumno.Controls.Add(txtNombre);
             pnlAlumno.Controls.Add(txtMatricula);
-            pnlAlumno.Location = new Point(39, 159);
+            pnlAlumno.Location = new Point(100, 159);
             pnlAlumno.Name = "pnlAlumno";
             pnlAlumno.Size = new Size(610, 301);
             pnlAlumno.TabIndex = 21;
@@ -305,7 +306,7 @@
             // 
             IblTitulo.AutoSize = true;
             IblTitulo.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            IblTitulo.Location = new Point(306, 21);
+            IblTitulo.Location = new Point(367, 21);
             IblTitulo.Name = "IblTitulo";
             IblTitulo.Size = new Size(284, 81);
             IblTitulo.TabIndex = 29;
@@ -314,7 +315,7 @@
             // pcbLogo
             // 
             pcbLogo.Image = (Image)resources.GetObject("pcbLogo.Image");
-            pcbLogo.Location = new Point(616, -1);
+            pcbLogo.Location = new Point(677, -1);
             pcbLogo.Name = "pcbLogo";
             pcbLogo.Size = new Size(120, 127);
             pcbLogo.SizeMode = PictureBoxSizeMode.StretchImage;
