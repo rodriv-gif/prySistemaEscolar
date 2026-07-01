@@ -125,5 +125,23 @@ namespace prySistemaEscolar
             alumnos.LimpiarPanel(pnlUsuario);
             txtMatricula.Focus();
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            alumnos = new clsAlumnos();
+            dgvAlumnos.DataSource = null;
+            dgvAlumnos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            try
+            {
+                alumnos.Matricula= int.Parse(txtMatriculaAlumno.Text);
+                dgvAlumnos.DataSource = alumnos.Consultar();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 }
