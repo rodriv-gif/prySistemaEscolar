@@ -128,6 +128,11 @@ namespace prySistemaEscolar
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
+            if(string.IsNullOrEmpty(txtMatriculaAlumno.Text))
+            {
+                CargarGrid();
+                return;
+            }
             alumnos = new clsAlumnos();
             dgvAlumnos.DataSource = null;
             dgvAlumnos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -139,7 +144,7 @@ namespace prySistemaEscolar
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Requiere asignar datos" + ex.Message);
             }
 
         }
