@@ -110,5 +110,27 @@ namespace prySistemaEscolar
             }
             return tabla;
         }
+        
+        public void LimpiarPanel(Panel panelDestino)
+        {
+
+            foreach (Control control in panelDestino.Controls)
+            {
+                if(control is TextBox)
+                {
+                    ((TextBox)control).Clear();
+                }
+
+
+                else if(control is ComboBox)
+                {
+                    ((ComboBox)control).SelectedIndex = 0;
+
+                }
+            }
+        }
+         
+
+        
     }
 }

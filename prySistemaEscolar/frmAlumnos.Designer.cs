@@ -38,7 +38,7 @@
             btnNuevo = new Button();
             label2 = new Label();
             label1 = new Label();
-            panel2 = new Panel();
+            pnlUsuario = new Panel();
             cmbPerfil = new ComboBox();
             txtPassword = new TextBox();
             txtUsuario = new TextBox();
@@ -56,7 +56,7 @@
             IblTitulo = new Label();
             pcbLogo = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dgvAlumnos).BeginInit();
-            panel2.SuspendLayout();
+            pnlUsuario.SuspendLayout();
             pnlAlumno.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pcbLogo).BeginInit();
             SuspendLayout();
@@ -126,6 +126,7 @@
             btnNuevo.Size = new Size(135, 73);
             btnNuevo.TabIndex = 24;
             btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // label2
             // 
@@ -147,17 +148,17 @@
             label1.TabIndex = 20;
             label1.Text = "Alumno";
             // 
-            // panel2
+            // pnlUsuario
             // 
-            panel2.BackColor = Color.FromArgb(0, 192, 192);
-            panel2.BorderStyle = BorderStyle.Fixed3D;
-            panel2.Controls.Add(cmbPerfil);
-            panel2.Controls.Add(txtPassword);
-            panel2.Controls.Add(txtUsuario);
-            panel2.Location = new Point(746, 159);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(457, 301);
-            panel2.TabIndex = 22;
+            pnlUsuario.BackColor = Color.FromArgb(0, 192, 192);
+            pnlUsuario.BorderStyle = BorderStyle.Fixed3D;
+            pnlUsuario.Controls.Add(cmbPerfil);
+            pnlUsuario.Controls.Add(txtPassword);
+            pnlUsuario.Controls.Add(txtUsuario);
+            pnlUsuario.Location = new Point(746, 159);
+            pnlUsuario.Name = "pnlUsuario";
+            pnlUsuario.Size = new Size(457, 301);
+            pnlUsuario.TabIndex = 22;
             // 
             // cmbPerfil
             // 
@@ -336,13 +337,13 @@
             Controls.Add(btnNuevo);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(panel2);
+            Controls.Add(pnlUsuario);
             Controls.Add(pnlAlumno);
             Name = "frmAlumnos";
             Text = "Registro de alumnos";
             ((System.ComponentModel.ISupportInitialize)dgvAlumnos).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            pnlUsuario.ResumeLayout(false);
+            pnlUsuario.PerformLayout();
             pnlAlumno.ResumeLayout(false);
             pnlAlumno.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pcbLogo).EndInit();
@@ -359,7 +360,7 @@
         private Button btnNuevo;
         private Label label2;
         private Label label1;
-        private Panel panel2;
+        private Panel pnlUsuario;
         private ComboBox cmbPerfil;
         private TextBox txtPassword;
         private TextBox txtUsuario;
