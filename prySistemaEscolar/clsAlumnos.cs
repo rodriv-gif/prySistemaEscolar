@@ -21,9 +21,9 @@ namespace prySistemaEscolar
         private int idCarrera;//foraneo
         private int idUsuario;
 
-      /*  //adaptador y  tabla virtuales de la clase
+        //adaptador y  tabla virtuales de la clase
         private MySqlDataAdapter consulta;
-        private DataTable tabla;*/
+        private DataTable tabla;
 
         //propiedades
         public int Matricula { get => matricula; set => matricula = value; }
