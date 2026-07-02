@@ -191,7 +191,7 @@ namespace prySistemaEscolar
 
                                     //Paso 8: Insertar el alumno en tblalumnos vinculando el ID de usuario obtenido
                                     string sqlInsAlumno = "INSERT INTO tblalumnos(matricula, idUsuario, nombreAlumno, apellidoP, apellidoM, direccion, telefono, correo, promedioBachillerato, idTutor, idCarrera)\r\nVALUES(@matricula, @idUsuario, @nombre, @apP, @apM, @dir, @tel, @correo, @prom, @idTutor,@idCarrera);";
-                                    using(comando=new MySqlCommand(sqlInsAlumno, conexion, transaccion))
+                                    using (comando = new MySqlCommand(sqlInsAlumno, conexion, transaccion))
                                     {
                                         comando.Parameters.AddWithValue("@matricula", matricula);
                                         comando.Parameters.AddWithValue("@idUsuario", nuevoIdUsuario);
