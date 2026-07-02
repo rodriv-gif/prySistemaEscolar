@@ -20,10 +20,15 @@ namespace prySistemaEscolar
         private int idTutor;//foraneo
         private int idCarrera;//foraneo
         private int idUsuario;
+        //Estos atributos agregamos para registrar el usuario
+        private string nombreUsuario;
+        private string password;
+        private string perfil;
 
         //adaptador y  tabla virtuales de la clase
         private MySqlDataAdapter consulta;
         private DataTable tabla;
+        private MySqlCommand comando;
 
         //propiedades
         public int Matricula { get => matricula; set => matricula = value; }
@@ -37,6 +42,9 @@ namespace prySistemaEscolar
         public int IdTutor { get => idTutor; set => idTutor = value; }
         public int IdCarrera { get => idCarrera; set => idCarrera = value; }
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
+        public string NombreUsuario { get => nombreUsuario; set => nombreUsuario = value; }
+        public string Password { get => password; set => password = value; }
+        public string Perfil { get => perfil; set => perfil = value; }
 
         public DataTable CargarDataGrid()
         {
@@ -153,6 +161,57 @@ namespace prySistemaEscolar
                 throw new Exception("Error en la conexion de la base de datos" + ex.Message);
             }
             return tabla;
+        }
+        public string GuardarActualizar(int tipoOperacion)
+        {
+            string msj = "";
+            clsConexion conexionBD = new clsConexion();
+            try
+            {
+                using (var conexion=conexionBD.AbrirConexion())
+                {
+                    using (var transaccion=conexion.BeginTransaction())
+                    {
+                        try
+                        {
+                            switch(tipoOperacion)
+                            {
+                                case 0://insertar uno
+                                    //insertamos en la tabla tblusuarios
+                                    string sqlInsUser = "INSERT INTO tblusuarios(vchnombreUsuario, vchpassword, vchperfil, vchestado) VALUES(@nomUser, MD5(@pass), @perfil, 'Activo');SELECT LAST_INSERT_ID();";
+
+                                    int nuevoIdUsuario = 0;
+                                    using(comando=new MySqlCommand(sqlInsUser, conexion, transaccion))
+                                    {
+                                        comando.Parameters.AddWithValue("@nomUser", nombreUsuario);
+                                        comando.Parameters.AddWithValue("@pass", password);
+                                        comando.Parameters.AddWithValue("@nomUser", perfil);
+                                        nuevoIdUsuario = Convert.ToInt32(comando.ExecuteScalar());
+                                    }
+
+                                    //Paso 8: Insertar el alumno en tblalumnos vinculando el ID de usuario obtenido
+                                    string sqlInsAlumno = "INSERT INTO tblalumnos(matricula, idUsuario, nombreAlumno, apellidoP, apellidoM, direccion, telefono, correo, promedioBachillerato, idTutor, idCarrera)\r\nVALUES(@matricula, @idUsuario, @nombre, @apP, @apM, @dir, @tel, @correo, @prom, @idTutor,@idCarrera);";
+                                    using(comando=new MySqlCommand(sqlInsAlumno, conexion, transaccion))
+                                    {
+                                        comando.Parameters.AddWithValue("@matricula", matricula);
+                                        comando.Parameters.AddWithValue("@idUsuario", nuevoIdUsuario);
+                                    }
+
+                            }
+                        }
+                        catch (Exception)
+                        {
+
+                            throw;
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
 
