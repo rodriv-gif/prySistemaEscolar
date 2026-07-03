@@ -186,7 +186,7 @@ namespace prySistemaEscolar
                                     {
                                         comando.Parameters.AddWithValue("@nomUser", nombreUsuario);
                                         comando.Parameters.AddWithValue("@pass", password);
-                                        comando.Parameters.AddWithValue("@nomUser", perfil);
+                                        comando.Parameters.AddWithValue("@perfil", perfil);
                                         nuevoIdUsuario = Convert.ToInt32(comando.ExecuteScalar());
                                     }
 
@@ -215,7 +215,7 @@ namespace prySistemaEscolar
 
                                 case 1:  //ACTUALIZAR
                                     //PASO A:Actualizar la tabla de usuarios utilizando el ID que recuperamos en el clic
-                                    string sqlupdUser = "UPDATE tblusuarios SET vchnombreUsuario = @nomUser, vchpassword=MD5(@pass),vchperfil = @perfil" + "WHERE intidUsuario = @idUsuario;";
+                                    string sqlupdUser = "UPDATE tblusuarios SET vchnombreUsuario = @nomUser, vchpassword=MD5(@pass),vchperfil = @perfil" + " WHERE intidUsuario = @idUsuario;";
                                     using (comando = new MySqlCommand(sqlupdUser, conexion, transaccion))
                                     {
                                         comando.Parameters.AddWithValue("@idUsuario", idUsuario);
@@ -266,6 +266,53 @@ namespace prySistemaEscolar
             return msg;
         }//finaliza el metodo
 
+        public string Eliminar()
+        {
+            string msg = "";
+            clsConexion conexionBD = new clsConexion();
 
+            try
+            {
+                using (var conexion = conexionBD.AbrirConexion())
+                {
+                    using (var transaccion = conexion.BeginTransaction())
+                    {
+                        try
+                        {
+                            //eliminamos alumnos
+                            string sqlDelAlumno = "DELETE FROM tblAlumnos WHERE matricula = @matricula;";
+                            using (comando = new MySqlCommand(sqlDelAlumno, conexion, transaccion))
+                            {
+                                comando.Parameters.AddWithValue("@matricula", matricula);
+                                comando.ExecuteNonQuery();
+                            }
+
+                            //eliminamos usuario
+                            string sqlDelUsuario = "DELETE FROM tblusuarios WHERE intidUsuario = @idUsuario;";
+                            using (comando = new MySqlCommand(sqlDelUsuario, conexion, transaccion))
+                            {
+                                comando.Parameters.AddWithValue("@idUsuario", idUsuario);
+                                comando.ExecuteNonQuery();
+                            }
+
+                            //si en ambas se eliminan correctamente
+                            transaccion.Commit();
+                            msg = "El alumno y sus credenciales de usuario han sido eliminados del sistema.";
+                        }
+                        catch (Exception ex)
+                        {
+                            //si algo falla, deshacemos la operacion para no dejar datos huérfanos
+                            transaccion.Rollback();
+                            throw new Exception("No se pudo completar la eliminación. Cambios revertidos: " + ex.Message);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error de conexión al eliminar: " + ex.Message);
+            }
+            return msg;
+        }
     }
 }
