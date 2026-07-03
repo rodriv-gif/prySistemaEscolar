@@ -16,7 +16,7 @@ namespace prySistemaEscolar
         private string direccion;
         private string telefono;
         private string correo;
-        private string promedioBachillerato;
+        private decimal promedioBachillerato;
         private int idTutor;//foraneo
         private int idCarrera;//foraneo
         private int idUsuario;
@@ -39,7 +39,7 @@ namespace prySistemaEscolar
         public string Direccion { get => direccion; set => direccion = value; }
         public string Telefono { get => telefono; set => telefono = value; }
         public string Correo { get => correo; set => correo = value; }
-        public string PromedioBachillerato { get => promedioBachillerato; set => promedioBachillerato = value; }
+        public decimal PromedioBachillerato { get => promedioBachillerato; set => promedioBachillerato = value; }
         public int IdTutor { get => idTutor; set => idTutor = value; }
         public int IdCarrera { get => idCarrera; set => idCarrera = value; }
         public int IdUsuario { get => idUsuario; set => idUsuario = value; }
@@ -215,7 +215,7 @@ namespace prySistemaEscolar
 
                                 case 1:  //ACTUALIZAR
                                     //PASO A:Actualizar la tabla de usuarios utilizando el ID que recuperamos en el clic
-                                    string sqlupdUser = "UPDATE tblusuarios SET vchnombreUsuario =@nomUser, vchpassword=MD5(@pass),vchperfil=@perfil" + "WHERE intidUsuario=@idUsuario;";
+                                    string sqlupdUser = "UPDATE tblusuarios SET vchnombreUsuario = @nomUser, vchpassword=MD5(@pass),vchperfil = @perfil" + "WHERE intidUsuario = @idUsuario;";
                                     using (comando = new MySqlCommand(sqlupdUser, conexion, transaccion))
                                     {
                                         comando.Parameters.AddWithValue("@idUsuario", idUsuario);
