@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq.Expressions;
 using System.Text;
 using System.Windows.Forms;
 
@@ -130,7 +132,7 @@ namespace prySistemaEscolar
 
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
-            if(string.IsNullOrEmpty(txtMatriculaAlumno.Text))
+            if (string.IsNullOrEmpty(txtMatriculaAlumno.Text))
             {
                 CargarGrid();
                 return;
@@ -140,7 +142,7 @@ namespace prySistemaEscolar
             dgvAlumnos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             try
             {
-                alumnos.Matricula= int.Parse(txtMatriculaAlumno.Text);
+                alumnos.Matricula = int.Parse(txtMatriculaAlumno.Text);
                 dgvAlumnos.DataSource = alumnos.Consultar();
 
             }
@@ -149,6 +151,58 @@ namespace prySistemaEscolar
                 MessageBox.Show("Requiere asignar datos" + ex.Message);
             }
 
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int tipoOperacion = idMatricula == 0 ? 0 : 1;
+
+                alumnos = new clsAlumnos();
+
+                alumnos.Matricula = int.Parse(txtMatricula.Text);
+                alumnos.NombreAlumno = txtNombre.Text;
+                alumnos.ApellidoP = txtAPaterno.Text;
+                alumnos.ApellidoM = txtAMaterno.Text;
+                alumnos.Direccion = txtDireccion.Text;
+                alumnos.Telefono = txtTelefono.Text;
+                alumnos.Correo = txtCorreo.Text;
+                alumnos.PromedioBachillerato = decimal.Parse(txtPromedioBachiller.Text);
+                alumnos.IdCarrera = Convert.ToInt32(cmbCarrera.SelectedValue);
+                alumnos.IdTutor = Convert.ToInt32(cmbTutor.SelectedValue);
+
+                //Propiedades del bloqueo de usuario
+                alumnos.IdUsuario = idUsuario;
+                alumnos.NombreUsuario = txtUsuario.Text;
+                alumnos.Password = txtPassword.Text;
+                alumnos.Perfil = cmbPerfil.Text;
+
+                string msg = "";
+
+                //confirmacion de carrera
+                if (tipoOperacion == 1)
+                {
+                    var resp = MessageBox.Show("¿Confirmar que desea actualizar los datos de este alumno?", "ALERTA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (resp == DialogResult.Yes)
+                    {
+                        msg = alumnos.GuardarActualizar(tipoOperacion);
+                        MessageBox.Show(msg, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    msg = alumnos.GuardarActualizar(tipoOperacion);
+                    MessageBox.Show(msg, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                CargarGrid();
+            }
+
+            catch (Exception ex) 
+            {
+                MessageBox.Show("No se pudieron guardar los datos:" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
