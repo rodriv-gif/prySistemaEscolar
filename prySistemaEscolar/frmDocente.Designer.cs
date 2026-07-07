@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             pictureBox1 = new PictureBox();
             label1 = new Label();
             panel1 = new Panel();
@@ -159,20 +161,36 @@
             // 
             // dgvDocentes
             // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(128, 128, 255);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvDocentes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvDocentes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDocentes.Location = new Point(48, 575);
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 224, 192);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(128, 128, 255);
+            dataGridViewCellStyle2.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvDocentes.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvDocentes.Location = new Point(124, 575);
             dgvDocentes.Name = "dgvDocentes";
             dgvDocentes.RowHeadersWidth = 51;
-            dgvDocentes.Size = new Size(1091, 162);
+            dgvDocentes.Size = new Size(1015, 162);
             dgvDocentes.TabIndex = 6;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(176, 121);
+            label2.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(141, 122);
             label2.Name = "label2";
-            label2.Size = new Size(91, 28);
+            label2.Size = new Size(103, 31);
             label2.TabIndex = 7;
             label2.Text = "Docente";
             // 
@@ -180,7 +198,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(681, 121);
+            label3.Location = new Point(685, 121);
             label3.Name = "label3";
             label3.Size = new Size(97, 31);
             label3.TabIndex = 8;
@@ -194,7 +212,7 @@
             panel2.Controls.Add(txtPuesto);
             panel2.Controls.Add(txtNombreDocente);
             panel2.Controls.Add(txtClave);
-            panel2.Location = new Point(176, 155);
+            panel2.Location = new Point(133, 155);
             panel2.Name = "panel2";
             panel2.Size = new Size(428, 301);
             panel2.TabIndex = 9;
