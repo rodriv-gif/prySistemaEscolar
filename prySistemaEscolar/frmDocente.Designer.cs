@@ -31,32 +31,27 @@
             pictureBox1 = new PictureBox();
             label1 = new Label();
             panel1 = new Panel();
+            textBox5 = new TextBox();
+            textBox4 = new TextBox();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
             dataGridView1 = new DataGridView();
             label2 = new Label();
             label3 = new Label();
             panel2 = new Panel();
-            panel3 = new Panel();
-            textBox6 = new TextBox();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
-            textBox9 = new TextBox();
             textBox10 = new TextBox();
-            textBox11 = new TextBox();
-            textBox12 = new TextBox();
-            textBox13 = new TextBox();
-            textBox16 = new TextBox();
-            textBox17 = new TextBox();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
+            textBox9 = new TextBox();
+            textBox8 = new TextBox();
+            textBox7 = new TextBox();
+            textBox6 = new TextBox();
+            panel3 = new Panel();
             comboBox3 = new ComboBox();
+            textBox17 = new TextBox();
+            textBox16 = new TextBox();
             textBox14 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -97,11 +92,46 @@
             panel1.Size = new Size(0, 0);
             panel1.TabIndex = 2;
             // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(220, 227);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(500, 27);
+            textBox5.TabIndex = 4;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(220, 170);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(500, 27);
+            textBox4.TabIndex = 3;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(220, 116);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(500, 27);
+            textBox3.TabIndex = 2;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(220, 69);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(500, 27);
+            textBox2.TabIndex = 1;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(220, 19);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(500, 27);
+            textBox1.TabIndex = 0;
+            // 
             // button1
             // 
             button1.BackgroundImage = Properties.Resources.Nuevo;
             button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.Location = new Point(361, 460);
+            button1.Location = new Point(361, 462);
             button1.Name = "button1";
             button1.Size = new Size(135, 73);
             button1.TabIndex = 3;
@@ -112,7 +142,7 @@
             // 
             button2.BackgroundImage = Properties.Resources.Guardar;
             button2.BackgroundImageLayout = ImageLayout.Stretch;
-            button2.Location = new Point(591, 458);
+            button2.Location = new Point(591, 460);
             button2.Name = "button2";
             button2.Size = new Size(135, 73);
             button2.TabIndex = 4;
@@ -122,46 +152,11 @@
             // 
             button3.BackgroundImage = Properties.Resources.Eliminar;
             button3.BackgroundImageLayout = ImageLayout.Stretch;
-            button3.Location = new Point(814, 458);
+            button3.Location = new Point(814, 460);
             button3.Name = "button3";
             button3.Size = new Size(135, 73);
             button3.TabIndex = 5;
             button3.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(220, 19);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(500, 27);
-            textBox1.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(220, 69);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(500, 27);
-            textBox2.TabIndex = 1;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(220, 116);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(500, 27);
-            textBox3.TabIndex = 2;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(220, 170);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(500, 27);
-            textBox4.TabIndex = 3;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(220, 227);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(500, 27);
-            textBox5.TabIndex = 4;
             // 
             // dataGridView1
             // 
@@ -176,7 +171,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(235, 122);
+            label2.Location = new Point(176, 121);
             label2.Name = "label2";
             label2.Size = new Size(91, 28);
             label2.TabIndex = 7;
@@ -186,7 +181,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(968, 119);
+            label3.Location = new Point(681, 121);
             label3.Name = "label3";
             label3.Size = new Size(97, 31);
             label3.TabIndex = 8;
@@ -195,20 +190,60 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(192, 192, 255);
-            panel2.Controls.Add(comboBox2);
-            panel2.Controls.Add(comboBox1);
-            panel2.Controls.Add(textBox13);
-            panel2.Controls.Add(textBox12);
-            panel2.Controls.Add(textBox11);
             panel2.Controls.Add(textBox10);
             panel2.Controls.Add(textBox9);
             panel2.Controls.Add(textBox8);
             panel2.Controls.Add(textBox7);
             panel2.Controls.Add(textBox6);
-            panel2.Location = new Point(48, 153);
+            panel2.Location = new Point(176, 155);
             panel2.Name = "panel2";
-            panel2.Size = new Size(610, 301);
+            panel2.Size = new Size(428, 301);
             panel2.TabIndex = 9;
+            // 
+            // textBox10
+            // 
+            textBox10.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox10.Location = new Point(72, 239);
+            textBox10.Name = "textBox10";
+            textBox10.PlaceholderText = "Correo";
+            textBox10.Size = new Size(277, 38);
+            textBox10.TabIndex = 4;
+            // 
+            // textBox9
+            // 
+            textBox9.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox9.Location = new Point(72, 182);
+            textBox9.Name = "textBox9";
+            textBox9.PlaceholderText = "Telefono";
+            textBox9.Size = new Size(277, 38);
+            textBox9.TabIndex = 3;
+            // 
+            // textBox8
+            // 
+            textBox8.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox8.Location = new Point(72, 130);
+            textBox8.Name = "textBox8";
+            textBox8.PlaceholderText = "Puesto";
+            textBox8.Size = new Size(277, 38);
+            textBox8.TabIndex = 2;
+            // 
+            // textBox7
+            // 
+            textBox7.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox7.Location = new Point(72, 81);
+            textBox7.Name = "textBox7";
+            textBox7.PlaceholderText = "Nombre del docente";
+            textBox7.Size = new Size(277, 38);
+            textBox7.TabIndex = 1;
+            // 
+            // textBox6
+            // 
+            textBox6.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox6.Location = new Point(72, 29);
+            textBox6.Name = "textBox6";
+            textBox6.PlaceholderText = "Clave";
+            textBox6.Size = new Size(277, 38);
+            textBox6.TabIndex = 0;
             // 
             // panel3
             // 
@@ -216,104 +251,37 @@
             panel3.Controls.Add(comboBox3);
             panel3.Controls.Add(textBox17);
             panel3.Controls.Add(textBox16);
-            panel3.Location = new Point(682, 153);
+            panel3.Location = new Point(682, 155);
             panel3.Name = "panel3";
             panel3.Size = new Size(457, 301);
             panel3.TabIndex = 10;
             // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(13, 29);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(277, 27);
-            textBox6.TabIndex = 0;
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(13, 79);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(277, 27);
-            textBox7.TabIndex = 1;
-            // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(13, 118);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(277, 27);
-            textBox8.TabIndex = 2;
-            // 
-            // textBox9
-            // 
-            textBox9.Location = new Point(13, 165);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(277, 27);
-            textBox9.TabIndex = 3;
-            // 
-            // textBox10
-            // 
-            textBox10.Location = new Point(13, 208);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(277, 27);
-            textBox10.TabIndex = 4;
-            // 
-            // textBox11
-            // 
-            textBox11.Location = new Point(316, 29);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(277, 27);
-            textBox11.TabIndex = 5;
-            // 
-            // textBox12
-            // 
-            textBox12.Location = new Point(316, 79);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(277, 27);
-            textBox12.TabIndex = 6;
-            // 
-            // textBox13
-            // 
-            textBox13.Location = new Point(316, 118);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(277, 27);
-            textBox13.TabIndex = 7;
-            // 
-            // textBox16
-            // 
-            textBox16.Location = new Point(34, 29);
-            textBox16.Name = "textBox16";
-            textBox16.Size = new Size(401, 27);
-            textBox16.TabIndex = 0;
-            // 
-            // textBox17
-            // 
-            textBox17.Location = new Point(34, 79);
-            textBox17.Name = "textBox17";
-            textBox17.Size = new Size(401, 27);
-            textBox17.TabIndex = 1;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(313, 164);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(277, 28);
-            comboBox1.TabIndex = 8;
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(313, 208);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(277, 28);
-            comboBox2.TabIndex = 9;
-            // 
             // comboBox3
             // 
+            comboBox3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             comboBox3.FormattingEnabled = true;
             comboBox3.Location = new Point(34, 130);
             comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(401, 28);
+            comboBox3.Size = new Size(401, 39);
             comboBox3.TabIndex = 2;
+            // 
+            // textBox17
+            // 
+            textBox17.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox17.Location = new Point(34, 79);
+            textBox17.Name = "textBox17";
+            textBox17.PlaceholderText = "Password";
+            textBox17.Size = new Size(401, 38);
+            textBox17.TabIndex = 1;
+            // 
+            // textBox16
+            // 
+            textBox16.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox16.Location = new Point(34, 29);
+            textBox16.Name = "textBox16";
+            textBox16.PlaceholderText = "Usuario";
+            textBox16.Size = new Size(401, 38);
+            textBox16.TabIndex = 0;
             // 
             // textBox14
             // 
@@ -373,9 +341,6 @@
         private Label label3;
         private Panel panel2;
         private Panel panel3;
-        private TextBox textBox13;
-        private TextBox textBox12;
-        private TextBox textBox11;
         private TextBox textBox10;
         private TextBox textBox9;
         private TextBox textBox8;
@@ -383,8 +348,6 @@
         private TextBox textBox6;
         private TextBox textBox17;
         private TextBox textBox16;
-        private ComboBox comboBox2;
-        private ComboBox comboBox1;
         private ComboBox comboBox3;
         private TextBox textBox14;
     }
