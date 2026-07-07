@@ -10,13 +10,32 @@ namespace prySistemaEscolar
 {
     public partial class frmDocente : Form
     {
+        clsDocente docentes;
+        int idClave;
+        int idUsuario;
         public frmDocente()
         {
             InitializeComponent();
+            cargarGrid();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        public void cargarGrid()
         {
+            docentes = new clsDocente();
+            dgvDocentes.DataSource = null;
+            dgvDocentes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            try
+            {
+                dgvDocentes.DataSource = docentes.CargarDataGrid();
+                dgvDocentes.Columns["idUsuario"].Visible = false;
+                dgvDocentes.Columns["Usuario"].Visible = false;
+                dgvDocentes.Columns["Password"].Visible = false;
+                dgvDocentes.Columns["Perfil"].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
 
         }
     }
