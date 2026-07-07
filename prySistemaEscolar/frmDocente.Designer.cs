@@ -36,26 +36,26 @@
             textBox3 = new TextBox();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            dataGridView1 = new DataGridView();
+            btnNuevo = new Button();
+            btnGuardar = new Button();
+            btnEliminar = new Button();
+            dgvDocentes = new DataGridView();
             label2 = new Label();
             label3 = new Label();
             panel2 = new Panel();
-            textBox10 = new TextBox();
-            textBox9 = new TextBox();
-            textBox8 = new TextBox();
-            textBox7 = new TextBox();
-            textBox6 = new TextBox();
+            txtCorreo = new TextBox();
+            txtTelefono = new TextBox();
+            txtPuesto = new TextBox();
+            txtNombreDocente = new TextBox();
+            txtClave = new TextBox();
             panel3 = new Panel();
-            comboBox3 = new ComboBox();
-            textBox17 = new TextBox();
-            textBox16 = new TextBox();
-            textBox14 = new TextBox();
+            cmbPerfil = new ComboBox();
+            txtPassword = new TextBox();
+            txtUsuario = new TextBox();
+            txtClaveDocente = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDocentes).BeginInit();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
@@ -127,45 +127,45 @@
             textBox1.Size = new Size(500, 27);
             textBox1.TabIndex = 0;
             // 
-            // button1
+            // btnNuevo
             // 
-            button1.BackgroundImage = Properties.Resources.Nuevo;
-            button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.Location = new Point(361, 462);
-            button1.Name = "button1";
-            button1.Size = new Size(135, 73);
-            button1.TabIndex = 3;
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnNuevo.BackgroundImage = Properties.Resources.Nuevo;
+            btnNuevo.BackgroundImageLayout = ImageLayout.Stretch;
+            btnNuevo.Location = new Point(361, 462);
+            btnNuevo.Name = "btnNuevo";
+            btnNuevo.Size = new Size(135, 73);
+            btnNuevo.TabIndex = 3;
+            btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += button1_Click;
             // 
-            // button2
+            // btnGuardar
             // 
-            button2.BackgroundImage = Properties.Resources.Guardar;
-            button2.BackgroundImageLayout = ImageLayout.Stretch;
-            button2.Location = new Point(591, 460);
-            button2.Name = "button2";
-            button2.Size = new Size(135, 73);
-            button2.TabIndex = 4;
-            button2.UseVisualStyleBackColor = true;
+            btnGuardar.BackgroundImage = Properties.Resources.Guardar;
+            btnGuardar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnGuardar.Location = new Point(591, 460);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(135, 73);
+            btnGuardar.TabIndex = 4;
+            btnGuardar.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnEliminar
             // 
-            button3.BackgroundImage = Properties.Resources.Eliminar;
-            button3.BackgroundImageLayout = ImageLayout.Stretch;
-            button3.Location = new Point(814, 460);
-            button3.Name = "button3";
-            button3.Size = new Size(135, 73);
-            button3.TabIndex = 5;
-            button3.UseVisualStyleBackColor = true;
+            btnEliminar.BackgroundImage = Properties.Resources.Eliminar;
+            btnEliminar.BackgroundImageLayout = ImageLayout.Stretch;
+            btnEliminar.Location = new Point(814, 460);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(135, 73);
+            btnEliminar.TabIndex = 5;
+            btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvDocentes
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(48, 575);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1091, 162);
-            dataGridView1.TabIndex = 6;
+            dgvDocentes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDocentes.Location = new Point(48, 575);
+            dgvDocentes.Name = "dgvDocentes";
+            dgvDocentes.RowHeadersWidth = 51;
+            dgvDocentes.Size = new Size(1091, 162);
+            dgvDocentes.TabIndex = 6;
             // 
             // label2
             // 
@@ -190,122 +190,122 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(192, 192, 255);
-            panel2.Controls.Add(textBox10);
-            panel2.Controls.Add(textBox9);
-            panel2.Controls.Add(textBox8);
-            panel2.Controls.Add(textBox7);
-            panel2.Controls.Add(textBox6);
+            panel2.Controls.Add(txtCorreo);
+            panel2.Controls.Add(txtTelefono);
+            panel2.Controls.Add(txtPuesto);
+            panel2.Controls.Add(txtNombreDocente);
+            panel2.Controls.Add(txtClave);
             panel2.Location = new Point(176, 155);
             panel2.Name = "panel2";
             panel2.Size = new Size(428, 301);
             panel2.TabIndex = 9;
             // 
-            // textBox10
+            // txtCorreo
             // 
-            textBox10.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox10.Location = new Point(72, 239);
-            textBox10.Name = "textBox10";
-            textBox10.PlaceholderText = "Correo";
-            textBox10.Size = new Size(277, 38);
-            textBox10.TabIndex = 4;
+            txtCorreo.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtCorreo.Location = new Point(72, 239);
+            txtCorreo.Name = "txtCorreo";
+            txtCorreo.PlaceholderText = "Correo";
+            txtCorreo.Size = new Size(277, 38);
+            txtCorreo.TabIndex = 4;
             // 
-            // textBox9
+            // txtTelefono
             // 
-            textBox9.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox9.Location = new Point(72, 182);
-            textBox9.Name = "textBox9";
-            textBox9.PlaceholderText = "Telefono";
-            textBox9.Size = new Size(277, 38);
-            textBox9.TabIndex = 3;
+            txtTelefono.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtTelefono.Location = new Point(72, 182);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.PlaceholderText = "Telefono";
+            txtTelefono.Size = new Size(277, 38);
+            txtTelefono.TabIndex = 3;
             // 
-            // textBox8
+            // txtPuesto
             // 
-            textBox8.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox8.Location = new Point(72, 130);
-            textBox8.Name = "textBox8";
-            textBox8.PlaceholderText = "Puesto";
-            textBox8.Size = new Size(277, 38);
-            textBox8.TabIndex = 2;
+            txtPuesto.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtPuesto.Location = new Point(72, 130);
+            txtPuesto.Name = "txtPuesto";
+            txtPuesto.PlaceholderText = "Puesto";
+            txtPuesto.Size = new Size(277, 38);
+            txtPuesto.TabIndex = 2;
             // 
-            // textBox7
+            // txtNombreDocente
             // 
-            textBox7.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox7.Location = new Point(72, 81);
-            textBox7.Name = "textBox7";
-            textBox7.PlaceholderText = "Nombre del docente";
-            textBox7.Size = new Size(277, 38);
-            textBox7.TabIndex = 1;
+            txtNombreDocente.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtNombreDocente.Location = new Point(72, 81);
+            txtNombreDocente.Name = "txtNombreDocente";
+            txtNombreDocente.PlaceholderText = "Nombre del docente";
+            txtNombreDocente.Size = new Size(277, 38);
+            txtNombreDocente.TabIndex = 1;
             // 
-            // textBox6
+            // txtClave
             // 
-            textBox6.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox6.Location = new Point(72, 29);
-            textBox6.Name = "textBox6";
-            textBox6.PlaceholderText = "Clave";
-            textBox6.Size = new Size(277, 38);
-            textBox6.TabIndex = 0;
+            txtClave.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtClave.Location = new Point(72, 29);
+            txtClave.Name = "txtClave";
+            txtClave.PlaceholderText = "Clave";
+            txtClave.Size = new Size(277, 38);
+            txtClave.TabIndex = 0;
             // 
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(192, 192, 255);
-            panel3.Controls.Add(comboBox3);
-            panel3.Controls.Add(textBox17);
-            panel3.Controls.Add(textBox16);
+            panel3.Controls.Add(cmbPerfil);
+            panel3.Controls.Add(txtPassword);
+            panel3.Controls.Add(txtUsuario);
             panel3.Location = new Point(682, 155);
             panel3.Name = "panel3";
             panel3.Size = new Size(457, 301);
             panel3.TabIndex = 10;
             // 
-            // comboBox3
+            // cmbPerfil
             // 
-            comboBox3.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(34, 130);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(401, 39);
-            comboBox3.TabIndex = 2;
+            cmbPerfil.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            cmbPerfil.FormattingEnabled = true;
+            cmbPerfil.Location = new Point(34, 130);
+            cmbPerfil.Name = "cmbPerfil";
+            cmbPerfil.Size = new Size(401, 39);
+            cmbPerfil.TabIndex = 2;
             // 
-            // textBox17
+            // txtPassword
             // 
-            textBox17.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox17.Location = new Point(34, 79);
-            textBox17.Name = "textBox17";
-            textBox17.PlaceholderText = "Password";
-            textBox17.Size = new Size(401, 38);
-            textBox17.TabIndex = 1;
+            txtPassword.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtPassword.Location = new Point(34, 79);
+            txtPassword.Name = "txtPassword";
+            txtPassword.PlaceholderText = "Password";
+            txtPassword.Size = new Size(401, 38);
+            txtPassword.TabIndex = 1;
             // 
-            // textBox16
+            // txtUsuario
             // 
-            textBox16.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox16.Location = new Point(34, 29);
-            textBox16.Name = "textBox16";
-            textBox16.PlaceholderText = "Usuario";
-            textBox16.Size = new Size(401, 38);
-            textBox16.TabIndex = 0;
+            txtUsuario.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtUsuario.Location = new Point(34, 29);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.PlaceholderText = "Usuario";
+            txtUsuario.Size = new Size(401, 38);
+            txtUsuario.TabIndex = 0;
             // 
-            // textBox14
+            // txtClaveDocente
             // 
-            textBox14.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox14.Location = new Point(810, 535);
-            textBox14.Name = "textBox14";
-            textBox14.PlaceholderText = "Buscar por clave";
-            textBox14.Size = new Size(329, 34);
-            textBox14.TabIndex = 11;
+            txtClaveDocente.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtClaveDocente.Location = new Point(810, 535);
+            txtClaveDocente.Name = "txtClaveDocente";
+            txtClaveDocente.PlaceholderText = "Buscar por clave";
+            txtClaveDocente.Size = new Size(329, 34);
+            txtClaveDocente.TabIndex = 11;
             // 
             // frmDocente
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1315, 749);
-            Controls.Add(textBox14);
+            Controls.Add(txtClaveDocente);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(dataGridView1);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(dgvDocentes);
+            Controls.Add(btnEliminar);
+            Controls.Add(btnGuardar);
+            Controls.Add(btnNuevo);
             Controls.Add(panel1);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
@@ -314,7 +314,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDocentes).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
@@ -328,27 +328,27 @@
         private PictureBox pictureBox1;
         private Label label1;
         private Panel panel1;
-        private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button btnNuevo;
+        private Button btnGuardar;
+        private Button btnEliminar;
         private TextBox textBox1;
         private TextBox textBox5;
         private TextBox textBox4;
         private TextBox textBox3;
         private TextBox textBox2;
-        private DataGridView dataGridView1;
+        private DataGridView dgvDocentes;
         private Label label2;
         private Label label3;
         private Panel panel2;
         private Panel panel3;
-        private TextBox textBox10;
-        private TextBox textBox9;
-        private TextBox textBox8;
-        private TextBox textBox7;
-        private TextBox textBox6;
-        private TextBox textBox17;
-        private TextBox textBox16;
-        private ComboBox comboBox3;
-        private TextBox textBox14;
+        private TextBox txtCorreo;
+        private TextBox txtTelefono;
+        private TextBox txtPuesto;
+        private TextBox txtNombreDocente;
+        private TextBox txtClave;
+        private TextBox txtPassword;
+        private TextBox txtUsuario;
+        private ComboBox cmbPerfil;
+        private TextBox txtClaveDocente;
     }
 }
