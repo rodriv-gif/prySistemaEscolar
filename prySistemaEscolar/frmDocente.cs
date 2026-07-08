@@ -63,8 +63,86 @@ namespace prySistemaEscolar
             }
         }
 
-        
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            idClave = 0;
+            idUsuario = 0;
+            docentes.LimpiarPanel(pnlDocente);
+            docentes.LimpiarPanel(pnlUsuario);
+            txtClave.Focus();
+        }
 
-       
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int tipoOperacion = idClave == 0 ? 0 : 1;
+
+                docentes = new clsDocente();
+
+                docentes.Clave = int.Parse(txtClave.Text);
+                docentes.NombreDocente = string.IsNullOrEmpty(txtNombreDocente.Text) ? null : txtNombreDocente.Text;
+                docentes.Puesto = string.IsNullOrEmpty(txtPuesto.Text) ? null : txtPuesto.Text;
+                docentes.Telefono = string.IsNullOrEmpty(txtPuesto.Text) ? null : txtTelefono.Text;
+                docentes.Correo = string.IsNullOrEmpty(txtCorreo.Text) ? null : txtCorreo.Text;
+
+                //Propiedades del bloque de usuario
+                docentes.IdUsuario = idUsuario;
+                docentes.NombreUsuario = string.IsNullOrEmpty(txtUsuario.Text) ? null : txtUsuario.Text;
+                docentes.Password = string.IsNullOrEmpty(txtPassword.Text) ? null : txtPassword.Text;
+                docentes.Perfil = cmbPerfil.Text;
+
+                string msg = "";
+
+                //confirmacion de carrera
+                if (tipoOperacion == 1)
+                {
+                    var resp = MessageBox.Show("¿Confirmar que desea actualizar los datos de este docente?", "ALERTA", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    if (resp == DialogResult.Yes)
+                    {
+                        msg = docentes.GuardarActualizar(tipoOperacion);
+                        MessageBox.Show(msg, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    msg = docentes.GuardarActualizar(tipoOperacion);
+                    MessageBox.Show(msg, "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                cargarGrid();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudieron guardar los datos:" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            var respuesta = MessageBox.Show($"¿Estás seguro de que deseas eliminar este Docente?", "ADVERTENCIA!", MessageBoxButtons.YesNo, MessageBoxIcon.Stop);
+            if (respuesta == DialogResult.Yes)
+            {
+                try
+                {
+
+                    docentes = new clsDocente();
+
+                    docentes.Clave = idClave;
+                    docentes.IdUsuario = idUsuario;
+
+                    string resultado = docentes.Eliminar();
+
+                    MessageBox.Show(resultado, "Registro eliminado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cargarGrid();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al eliminar el registro: " + ex.Message, "Error operacional", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+        }
     }
 }
