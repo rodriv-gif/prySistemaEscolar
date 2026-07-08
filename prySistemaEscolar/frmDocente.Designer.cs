@@ -42,13 +42,13 @@
             dgvDocentes = new DataGridView();
             label2 = new Label();
             label3 = new Label();
-            panel2 = new Panel();
+            pnlDocente = new Panel();
             txtCorreo = new TextBox();
             txtTelefono = new TextBox();
             txtPuesto = new TextBox();
             txtNombreDocente = new TextBox();
             txtClave = new TextBox();
-            panel3 = new Panel();
+            pnlUsuario = new Panel();
             cmbPerfil = new ComboBox();
             txtPassword = new TextBox();
             txtUsuario = new TextBox();
@@ -56,8 +56,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDocentes).BeginInit();
-            panel2.SuspendLayout();
-            panel3.SuspendLayout();
+            pnlDocente.SuspendLayout();
+            pnlUsuario.SuspendLayout();
             SuspendLayout();
             // 
             // pictureBox1
@@ -165,6 +165,7 @@
             dgvDocentes.RowHeadersWidth = 51;
             dgvDocentes.Size = new Size(1091, 162);
             dgvDocentes.TabIndex = 6;
+            dgvDocentes.SelectionChanged += dgvDocentes_SelectionChanged;
             // 
             // label2
             // 
@@ -186,18 +187,18 @@
             label3.TabIndex = 8;
             label3.Text = "Usuario";
             // 
-            // panel2
+            // pnlDocente
             // 
-            panel2.BackColor = Color.FromArgb(192, 192, 255);
-            panel2.Controls.Add(txtCorreo);
-            panel2.Controls.Add(txtTelefono);
-            panel2.Controls.Add(txtPuesto);
-            panel2.Controls.Add(txtNombreDocente);
-            panel2.Controls.Add(txtClave);
-            panel2.Location = new Point(176, 155);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(428, 301);
-            panel2.TabIndex = 9;
+            pnlDocente.BackColor = Color.FromArgb(192, 192, 255);
+            pnlDocente.Controls.Add(txtCorreo);
+            pnlDocente.Controls.Add(txtTelefono);
+            pnlDocente.Controls.Add(txtPuesto);
+            pnlDocente.Controls.Add(txtNombreDocente);
+            pnlDocente.Controls.Add(txtClave);
+            pnlDocente.Location = new Point(176, 155);
+            pnlDocente.Name = "pnlDocente";
+            pnlDocente.Size = new Size(428, 301);
+            pnlDocente.TabIndex = 9;
             // 
             // txtCorreo
             // 
@@ -244,16 +245,16 @@
             txtClave.Size = new Size(277, 38);
             txtClave.TabIndex = 0;
             // 
-            // panel3
+            // pnlUsuario
             // 
-            panel3.BackColor = Color.FromArgb(192, 192, 255);
-            panel3.Controls.Add(cmbPerfil);
-            panel3.Controls.Add(txtPassword);
-            panel3.Controls.Add(txtUsuario);
-            panel3.Location = new Point(682, 155);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(457, 301);
-            panel3.TabIndex = 10;
+            pnlUsuario.BackColor = Color.FromArgb(192, 192, 255);
+            pnlUsuario.Controls.Add(cmbPerfil);
+            pnlUsuario.Controls.Add(txtPassword);
+            pnlUsuario.Controls.Add(txtUsuario);
+            pnlUsuario.Location = new Point(682, 155);
+            pnlUsuario.Name = "pnlUsuario";
+            pnlUsuario.Size = new Size(457, 301);
+            pnlUsuario.TabIndex = 10;
             // 
             // cmbPerfil
             // 
@@ -297,8 +298,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1315, 749);
             Controls.Add(txtClaveDocente);
-            Controls.Add(panel3);
-            Controls.Add(panel2);
+            Controls.Add(pnlUsuario);
+            Controls.Add(pnlDocente);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(dgvDocentes);
@@ -314,10 +315,10 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dgvDocentes).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            pnlDocente.ResumeLayout(false);
+            pnlDocente.PerformLayout();
+            pnlUsuario.ResumeLayout(false);
+            pnlUsuario.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -338,8 +339,8 @@
         private DataGridView dgvDocentes;
         private Label label2;
         private Label label3;
-        private Panel panel2;
-        private Panel panel3;
+        private Panel pnlDocente;
+        private Panel pnlUsuario;
         private TextBox txtCorreo;
         private TextBox txtTelefono;
         private TextBox txtPuesto;
