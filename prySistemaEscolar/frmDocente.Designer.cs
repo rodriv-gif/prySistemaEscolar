@@ -284,6 +284,7 @@
             // 
             cmbPerfil.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             cmbPerfil.FormattingEnabled = true;
+            cmbPerfil.Items.AddRange(new object[] { "Administrador", "Alumno", "Docente" });
             cmbPerfil.Location = new Point(34, 131);
             cmbPerfil.Name = "cmbPerfil";
             cmbPerfil.Size = new Size(401, 39);
