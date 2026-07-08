@@ -215,12 +215,11 @@ namespace prySistemaEscolar
 
                                 case 1:  //ACTUALIZAR
                                     //PASO A:Actualizar la tabla de usuarios utilizando el ID que recuperamos en el clic
-                                    string sqlupdUser = "UPDATE tblusuarios SET vchnombreUsuario = @nomUser, vchpassword=MD5(@pass),vchperfil = @perfil" + " WHERE intidUsuario = @idUsuario;";
+                                    string sqlupdUser = "UPDATE tblusuarios SET vchnombreUsuario = @nomUser,vchperfil = @perfil" + " WHERE intidUsuario = @idUsuario;";
                                     using (comando = new MySqlCommand(sqlupdUser, conexion, transaccion))
                                     {
                                         comando.Parameters.AddWithValue("@idUsuario", idUsuario);
                                         comando.Parameters.AddWithValue("@nomUser", nombreUsuario);
-                                        comando.Parameters.AddWithValue("@pass", password);
                                         comando.Parameters.AddWithValue("@perfil", perfil);
 
                                         comando.ExecuteNonQuery();
