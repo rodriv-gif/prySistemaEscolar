@@ -71,6 +71,27 @@ namespace prySistemaEscolar
             docentes.LimpiarPanel(pnlUsuario);
             txtClave.Focus();
         }
+        private void txtClaveDocente_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtClaveDocente.Text))
+            {
+                cargarGrid();
+                return;
+            }
+            docentes = new clsDocente();
+            dgvDocentes.DataSource = null;
+            dgvDocentes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            try
+            {
+                docentes.Clave = int.Parse(txtClaveDocente.Text);
+                dgvDocentes.DataSource = docentes.Consultar();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Requiere asignar datos" + ex.Message);
+            }
+        }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -81,10 +102,10 @@ namespace prySistemaEscolar
                 docentes = new clsDocente();
 
                 docentes.Clave = int.Parse(txtClave.Text);
-                docentes.NombreDocente = string.IsNullOrEmpty(txtNombreDocente.Text) ? null:txtNombreDocente.Text;
-                docentes.Puesto = string.IsNullOrEmpty(txtPuesto.Text) ? null:txtPuesto.Text;
-                docentes.Telefono = string.IsNullOrEmpty(txtPuesto.Text) ? null:txtTelefono.Text;
-                docentes.Correo = string.IsNullOrEmpty(txtCorreo.Text) ? null:txtCorreo.Text;
+                docentes.NombreDocente = string.IsNullOrEmpty(txtNombreDocente.Text) ? null : txtNombreDocente.Text;
+                docentes.Puesto = string.IsNullOrEmpty(txtPuesto.Text) ? null : txtPuesto.Text;
+                docentes.Telefono = string.IsNullOrEmpty(txtTelefono.Text) ? null : txtTelefono.Text;
+                docentes.Correo = string.IsNullOrEmpty(txtCorreo.Text) ? null : txtCorreo.Text;
 
                 //Propiedades del bloque de usuario
                 docentes.IdUsuario = idUsuario;
@@ -144,5 +165,7 @@ namespace prySistemaEscolar
             }
 
         }
+
+       
     }
 }

@@ -316,6 +316,7 @@
             txtClaveDocente.PlaceholderText = "Buscar por clave";
             txtClaveDocente.Size = new Size(329, 34);
             txtClaveDocente.TabIndex = 11;
+            txtClaveDocente.TextChanged += txtClaveDocente_TextChanged;
             // 
             // frmDocente
             // 
