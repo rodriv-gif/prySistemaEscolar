@@ -81,10 +81,10 @@ namespace prySistemaEscolar
                 docentes = new clsDocente();
 
                 docentes.Clave = int.Parse(txtClave.Text);
-                docentes.NombreDocente = string.IsNullOrEmpty(txtNombreDocente.Text) ? null : txtNombreDocente.Text;
-                docentes.Puesto = string.IsNullOrEmpty(txtPuesto.Text) ? null : txtPuesto.Text;
-                docentes.Telefono = string.IsNullOrEmpty(txtPuesto.Text) ? null : txtTelefono.Text;
-                docentes.Correo = string.IsNullOrEmpty(txtCorreo.Text) ? null : txtCorreo.Text;
+                docentes.NombreDocente = string.IsNullOrEmpty(txtNombreDocente.Text) ? null:txtNombreDocente.Text;
+                docentes.Puesto = string.IsNullOrEmpty(txtPuesto.Text) ? null:txtPuesto.Text;
+                docentes.Telefono = string.IsNullOrEmpty(txtPuesto.Text) ? null:txtTelefono.Text;
+                docentes.Correo = string.IsNullOrEmpty(txtCorreo.Text) ? null:txtCorreo.Text;
 
                 //Propiedades del bloque de usuario
                 docentes.IdUsuario = idUsuario;

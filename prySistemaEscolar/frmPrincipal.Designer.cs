@@ -124,7 +124,7 @@
             pnlContenedor.Cursor = Cursors.WaitCursor;
             pnlContenedor.Location = new Point(493, 192);
             pnlContenedor.Name = "pnlContenedor";
-            pnlContenedor.Size = new Size(1333, 756);
+            pnlContenedor.Size = new Size(1333, 796);
             pnlContenedor.TabIndex = 6;
             // 
             // pcbSalir
