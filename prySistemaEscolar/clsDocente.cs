@@ -228,7 +228,7 @@ namespace prySistemaEscolar
                             }
 
 
-                            string sqlDelUsuario = "DELETE FROM tbldocentes WHERE idUsuario = @idUsuario;";
+                            string sqlDelUsuario = "DELETE FROM tblusuarios WHERE intidUsuario = @idUsuario;";
                             using (comando = new MySqlCommand(sqlDelUsuario, conexion, transaccion))
                             {
                                 comando.Parameters.AddWithValue("@idUsuario", idUsuario);
