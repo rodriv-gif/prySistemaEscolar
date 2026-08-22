@@ -21,7 +21,7 @@ namespace prySistemaEscolar
             }
            
             
-            Application.Run(new frmPrincipal ());
+            //Application.Run(new frmPrincipal ());
         }
     }
 }

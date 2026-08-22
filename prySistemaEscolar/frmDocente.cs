@@ -42,7 +42,7 @@ namespace prySistemaEscolar
             {
                 //conocer si es nuevo o se actualizará
                 idClave = int.Parse(dgvDocentes.CurrentRow.Cells["Clave"].Value.ToString());
-                idUsuario = int.Parse(dgvDocentes.CurrentRow.Cells["idUsuario"].Value.ToString());
+                idUsuario = int.Parse(dgvDocentes.CurrentRow.Cells["idusuario"].Value.ToString());
 
                 //Tabla Docente 
                 txtClave.Text = idClave.ToString();
